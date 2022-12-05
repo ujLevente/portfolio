@@ -1,8 +1,9 @@
 import '../styles/globals.css';
-import { CssBaseline } from '@mui/material';
+import { CssBaseline, ThemeProvider } from '@mui/material';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Layout } from '../src/components/Layout';
+import { theme } from '../src/theme';
 
 export default function App({ Component, pageProps }: AppProps) {
     return (
@@ -15,11 +16,12 @@ export default function App({ Component, pageProps }: AppProps) {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            {/* <ThemeProvider theme={theme}> */}
-            <CssBaseline />
-            <Layout>
-                <Component {...pageProps} />
-            </Layout>
+            <ThemeProvider theme={theme}>
+                <CssBaseline />
+                <Layout>
+                    <Component {...pageProps} />
+                </Layout>
+            </ThemeProvider>
         </>
     );
 }

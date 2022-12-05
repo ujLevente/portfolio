@@ -1,5 +1,3 @@
 import { Components } from '@mui/material';
 
-export const components: Components = {
-    MuiToolbar: {},
-};
+export const components: Components = {};
