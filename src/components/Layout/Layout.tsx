@@ -1,4 +1,5 @@
 import MenuIcon from '@mui/icons-material/Menu';
+import { Container } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -18,32 +19,35 @@ export function Layout({ children }: PropsWithChildren) {
   return (
     <Box sx={{ display: 'flex' }}>
       <AppBar component="nav">
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {NAV_ITEMS.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
-                {item}
-              </Button>
-            ))}
-          </Box>
-        </Toolbar>
+        <Container maxWidth="lg">
+          <Toolbar>
+            <IconButton
+              color="inherit"
+              edge="start"
+              onClick={handleDrawerToggle}
+              sx={{ mr: 2, display: { sm: 'none' } }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+              {NAV_ITEMS.map((item) => (
+                <Button key={item} sx={{ color: '#fff' }}>
+                  {item}
+                </Button>
+              ))}
+            </Box>
+          </Toolbar>
+        </Container>
       </AppBar>
       <DrawerNavigation
         drawerOpen={drawerOpen}
         handleDrawerToggle={handleDrawerToggle}
       />
-      <Box component="main" sx={{ p: 3 }}>
+
+      <Container maxWidth="lg" component="main">
         <Toolbar />
         {children}
-      </Box>
+      </Container>
     </Box>
   );
 }
