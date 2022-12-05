@@ -18,7 +18,7 @@ export function Layout({ children }: PropsWithChildren) {
 
     return (
         <Box sx={{ display: 'flex' }}>
-            <AppBar component="nav">
+            <AppBar component="nav" sx={{ display: 'none' }}>
                 <Container maxWidth="lg">
                     <Toolbar>
                         <IconButton
@@ -45,7 +45,7 @@ export function Layout({ children }: PropsWithChildren) {
             />
 
             <Container maxWidth="lg" component="main">
-                <Toolbar />
+                {/* <Toolbar /> */}
                 {children}
             </Container>
         </Box>

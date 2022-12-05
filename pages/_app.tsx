@@ -1,9 +1,12 @@
-import '../styles/globals.css';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Layout } from '../src/components/Layout';
 import { theme } from '../src/theme';
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/500.css';
+import '@fontsource/plus-jakarta-sans/700.css';
+import '@fontsource/plus-jakarta-sans/500.css';
 
 export default function App({ Component, pageProps }: AppProps) {
     return (
