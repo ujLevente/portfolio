@@ -12,8 +12,18 @@ export function Hero() {
                     <Typography variant="h3" gutterBottom>
                         - my name is
                     </Typography>
-                    <Typography variant="h1" sx={{ mb: 4 }}>
+                    <Typography variant="h1" sx={{ mb: 1.5 }}>
                         Új Levente
+                    </Typography>
+                    <Typography
+                        variant="h2"
+                        sx={{
+                            mb: 3,
+                            color: 'secondary.main',
+                            fontSize: '25px',
+                        }}
+                    >
+                        Creative front-end developer
                     </Typography>
                     <Typography>
                         Creative front-end developer with more than +2 years of
@@ -22,7 +32,15 @@ export function Hero() {
                         Passionate about UI/UX
                     </Typography>
                 </Grid>
-                <Grid item sm={12} md={6} className={classes.gridItem}>
+                <Grid
+                    item
+                    sm={12}
+                    md={6}
+                    className={classes.gridItem}
+                    sx={{
+                        alignItems: 'end',
+                    }}
+                >
                     <Box
                         sx={{
                             position: 'relative',

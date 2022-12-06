@@ -5,6 +5,9 @@ export const palette: PaletteOptions = {
     primary: {
         main: '#F1F1F1',
     },
+    secondary: {
+        main: '#7E74F1',
+    },
     text: {
         primary: '#f1f1f1b3',
         secondary: '#F1F1F1',
