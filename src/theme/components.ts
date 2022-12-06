@@ -8,4 +8,11 @@ export const components: Components = {
             },
         },
     },
+    MuiTooltip: {
+        styleOverrides: {
+            tooltip: {
+                padding: '0 8px',
+            },
+        },
+    },
 };
