@@ -1,5 +1,63 @@
-import { Box } from '@mui/material';
+import { Timeline } from '@mui/lab';
+import { Box, Typography } from '@mui/material';
+import { ExperienceTimelineItem } from './ExperienceTimelineItem';
+
+const experienceList = [
+    {
+        startDate: new Date(2016, 9 - 1),
+        endDate: undefined,
+        name: 'Cargo-Viszed Kft.',
+        workedAs: 'Full-time (in self-employed status)',
+        location: 'Budapest, Hungary',
+        technologies: [
+            'React',
+            'React Native',
+            'Nestjs',
+            'Nextjs',
+            'Nodejs',
+            'Mongo',
+        ],
+        responsibilities: [
+            'Improving overall website performance for mobile users.',
+            'Collaborate with back-end developers and web designers to improve usability',
+            'Add voice search feature for mobile app.',
+            'Add voice search feature for mobile app.',
+        ],
+    },
+    {
+        startDate: new Date(2016, 9 - 1),
+        endDate: new Date(2016, 9 - 1),
+        workedAs: 'Full-time',
+        name: 'Webtown-Informatika Kft.',
+        location: 'Budapest, Hungary',
+        technologies: ['Java', 'Spring', 'JPA', 'Java EE', 'Postgres SQL'],
+        responsibilities: [
+            'Improving overall website performance for mobile users.',
+            'Collaborate with back-end developers and web designers to improve usability',
+            'Add voice search feature for mobile app.',
+            'Add voice search feature for mobile app.',
+        ],
+    },
+];
 
 export function Experience() {
-    return <Box height="2000px"></Box>;
+    return (
+        <Box>
+            <Typography variant="h3" gutterBottom>
+                - career path
+            </Typography>
+            <Typography variant="h2" gutterBottom>
+                Work Experices
+            </Typography>
+            <Timeline position="alternate">
+                {experienceList.map((item, index) => (
+                    <ExperienceTimelineItem
+                        key={item.name + item.startDate}
+                        item={item}
+                        latest={index === 0}
+                    />
+                ))}
+            </Timeline>
+        </Box>
+    );
 }

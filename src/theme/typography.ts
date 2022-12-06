@@ -35,4 +35,11 @@ export const typography: TypographyOptions = {
         fontSize: '16px',
         lineHeight: '32px',
     },
+    body2: {
+        fontFamily: 'Plus Jakarta Sans',
+        fontWeight: 500,
+        fontSize: '18px',
+        lineHeight: '23px',
+        color: 'white',
+    },
 };
