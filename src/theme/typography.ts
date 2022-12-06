@@ -1,4 +1,5 @@
 import { TypographyOptions } from '@mui/material/styles/createTypography';
+import { defaultTheme } from './default-theme';
 import { palette } from './palette';
 
 export const typography: TypographyOptions = {
@@ -8,6 +9,9 @@ export const typography: TypographyOptions = {
         fontSize: '44px',
         lineHeight: '55.44px',
         color: palette.text?.secondary,
+        [defaultTheme.breakpoints.down('sm')]: {
+            fontSize: '32px',
+        },
     },
     h2: {
         fontFamily: 'Plus Jakarta Sans',
