@@ -3,7 +3,7 @@ import { PaletteOptions } from '@mui/material';
 export const palette: PaletteOptions = {
     background: { default: '#1E1E1E' },
     primary: {
-        main: '#F1F1F1',
+        main: '#f1f1f1b3',
     },
     secondary: {
         main: '#7E74F1',

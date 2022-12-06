@@ -1,6 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import Image from 'next/image';
 import { makeStyles } from 'tss-react/mui';
+import { Social } from './Social';
 
 export function Hero() {
     const { classes, cx } = useStyles();
@@ -24,12 +25,13 @@ export function Hero() {
                 >
                     Creative front-end developer
                 </Typography>
-                <Typography>
+                <Typography sx={{ mb: 2 }}>
                     Creative front-end developer with more than +2 years of
                     experience in enterprise companies and startups. Proficient
                     in Html, Tailwind Css, Javascript and React. Passionate
                     about UI/UX
                 </Typography>
+                <Social />
             </Box>
             <Box className={classes.flexboxItem}>
                 <Box className={cx(classes.imageShape, classes.imageContainer)}>
