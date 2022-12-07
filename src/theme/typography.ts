@@ -29,6 +29,13 @@ export const typography: TypographyOptions = {
         textTransform: 'uppercase',
         color: '#656D72',
     },
+    h4: {
+        fontFamily: 'Plus Jakarta Sans',
+        fontWeight: 500,
+        fontSize: '18px',
+        lineHeight: '23px',
+        color: 'white',
+    },
     body1: {
         fontFamily: 'Inter',
         fontWeight: 400,
@@ -36,10 +43,9 @@ export const typography: TypographyOptions = {
         lineHeight: '32px',
     },
     body2: {
-        fontFamily: 'Plus Jakarta Sans',
-        fontWeight: 500,
-        fontSize: '18px',
-        lineHeight: '23px',
-        color: 'white',
+        fontFamily: 'Inter',
+        fontWeight: 400,
+        fontSize: '14px',
+        lineHeight: '27px',
     },
 };

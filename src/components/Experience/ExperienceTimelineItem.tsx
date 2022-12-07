@@ -6,7 +6,7 @@ import {
     TimelineOppositeContent,
     TimelineSeparator,
 } from '@mui/lab';
-import { Chip, Typography } from '@mui/material';
+import { Box, Chip, Typography } from '@mui/material';
 import { format } from 'date-fns';
 
 type ExperienceTimelineItemProps = {
@@ -47,28 +47,44 @@ export function ExperienceTimelineItem({
     };
 
     return (
-        <TimelineItem key={name}>
-            <TimelineOppositeContent color="text.secondary">
-                {createTimeInterval()}
+        <TimelineItem>
+            <TimelineOppositeContent>
+                <Typography
+                    sx={{
+                        lineHeight: '24px',
+                        color: 'white',
+                    }}
+                >
+                    {createTimeInterval()}
+                </Typography>
             </TimelineOppositeContent>
             <TimelineSeparator>
-                <TimelineDot
-                    variant={latest ? 'outlined' : 'filled'}
-                    // css={(theme) =>
-                    //     `border-color: ${theme.palette.azure.main};`
-                    // }
-                />
+                <TimelineDot variant={latest ? 'outlined' : 'filled'} />
                 <TimelineConnector />
             </TimelineSeparator>
-            <TimelineContent>
-                <Typography variant="body2">{name}</Typography>
-                <Typography>{location}</Typography>
+            <TimelineContent sx={{ mb: 1 }}>
+                <Typography variant="h4" sx={{ mb: 1 }}>
+                    {name}
+                </Typography>
+                <Typography sx={{ fontSize: '14px' }} gutterBottom>
+                    {location}
+                </Typography>
                 {technologies.map((item) => (
                     <Chip key={item} label={item} />
                 ))}
-                {responsibilities.map((item) => (
-                    <Typography key={item}>- {item}</Typography>
-                ))}
+                <Box
+                    sx={{
+                        width: '100%',
+                        height: '1px',
+                        bgcolor: 'text.secondary',
+                        my: 1.5,
+                    }}
+                />
+                <Box>
+                    {responsibilities.map((item) => (
+                        <Typography key={item}>- {item}</Typography>
+                    ))}
+                </Box>
             </TimelineContent>
         </TimelineItem>
     );

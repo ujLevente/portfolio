@@ -1,4 +1,5 @@
 import { Timeline } from '@mui/lab';
+import { timelineOppositeContentClasses } from '@mui/lab/TimelineOppositeContent';
 import { Box, Typography } from '@mui/material';
 import { ExperienceTimelineItem } from './ExperienceTimelineItem';
 
@@ -49,7 +50,14 @@ export function Experience() {
             <Typography variant="h2" gutterBottom>
                 Work Experices
             </Typography>
-            <Timeline position="alternate">
+            <Timeline
+                position="right"
+                sx={{
+                    [`& .${timelineOppositeContentClasses.root}`]: {
+                        flex: 0.4,
+                    },
+                }}
+            >
                 {experienceList.map((item, index) => (
                     <ExperienceTimelineItem
                         key={item.name + item.startDate}
