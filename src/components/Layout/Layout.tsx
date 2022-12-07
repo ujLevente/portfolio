@@ -45,7 +45,7 @@ export function Layout({ children }: PropsWithChildren) {
             />
 
             <Container maxWidth="lg" component="main">
-                {children}
+                <Box sx={{ px: 2 }}>{children}</Box>
             </Container>
         </Box>
     );

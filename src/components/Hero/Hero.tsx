@@ -70,7 +70,6 @@ const useStyles = makeStyles()((theme) => ({
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        padding: '0 16px',
         '&:first-of-type': {
             flex: 1,
             paddingRight: '64px',

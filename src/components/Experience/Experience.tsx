@@ -1,6 +1,6 @@
 import { Timeline } from '@mui/lab';
 import { timelineOppositeContentClasses } from '@mui/lab/TimelineOppositeContent';
-import { Box, Typography } from '@mui/material';
+import { Section } from '../common/Section';
 import { ExperienceTimelineItem } from './ExperienceTimelineItem';
 
 const experienceList = [
@@ -43,13 +43,7 @@ const experienceList = [
 
 export function Experience() {
     return (
-        <Box>
-            <Typography variant="h3" gutterBottom>
-                - career path
-            </Typography>
-            <Typography variant="h2" gutterBottom>
-                Work Experices
-            </Typography>
+        <Section titleOne="career path" titleTwo="Work Experices">
             <Timeline
                 position="right"
                 sx={{
@@ -66,6 +60,6 @@ export function Experience() {
                     />
                 ))}
             </Timeline>
-        </Box>
+        </Section>
     );
 }
