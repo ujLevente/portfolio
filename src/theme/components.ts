@@ -20,7 +20,6 @@ export const components: Components = {
         styleOverrides: {
             root: {
                 textDecoration: 'none',
-                color: defaultTheme.palette.text.primary,
                 transition: 'color 0.3s',
                 '&:hover': {
                     color: defaultTheme.palette.secondary.main,

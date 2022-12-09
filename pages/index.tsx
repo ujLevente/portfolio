@@ -1,13 +1,13 @@
-import { Box } from '@mui/material';
 import { Experience } from '../src/components/Experience';
 import { Hero } from '../src/components/Hero';
+import { Projects } from '../src/components/Projects';
 
 export default function Main() {
     return (
         <>
             <Hero />
+            <Projects />
             <Experience />
-            <Box height={240}></Box>
         </>
     );
 }
