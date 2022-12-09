@@ -20,7 +20,13 @@ export function Social() {
     return (
         <Box>
             {socialLinks.map(({ Icon, href }) => (
-                <Link href={href} target="_blank" key={href} sx={{ mr: 2 }}>
+                <Link
+                    href={href}
+                    target="_blank"
+                    key={href}
+                    sx={{ mr: 2 }}
+                    className="uncolored"
+                >
                     <Icon />
                 </Link>
             ))}

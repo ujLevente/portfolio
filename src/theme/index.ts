@@ -1,10 +1,10 @@
 import { createTheme } from '@mui/material';
 import { components } from './components';
-import { palette } from './palette';
+import { defaultTheme } from './default-theme';
 import { typography } from './typography';
 
 export const theme = createTheme({
+    ...defaultTheme,
     components,
-    palette,
     typography,
 });

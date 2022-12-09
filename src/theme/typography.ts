@@ -1,6 +1,5 @@
 import { TypographyOptions } from '@mui/material/styles/createTypography';
 import { defaultTheme } from './default-theme';
-import { palette } from './palette';
 
 export const typography: TypographyOptions = {
     h1: {
@@ -8,7 +7,7 @@ export const typography: TypographyOptions = {
         fontWeight: 700,
         fontSize: '44px',
         lineHeight: '55.44px',
-        color: palette.text?.secondary,
+        color: defaultTheme.palette.text.secondary,
         [defaultTheme.breakpoints.down('sm')]: {
             fontSize: '32px',
         },
@@ -18,7 +17,7 @@ export const typography: TypographyOptions = {
         fontWeight: 700,
         fontSize: '36px',
         lineHeight: '45.36px',
-        color: palette.text?.secondary,
+        color: defaultTheme.palette.text.secondary,
     },
     h3: {
         fontFamily: 'Inter',

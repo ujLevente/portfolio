@@ -1,3 +1,6 @@
 import { createTheme } from '@mui/material';
+import { palette } from './palette';
 
-export const defaultTheme = createTheme({});
+export const defaultTheme = createTheme({
+    palette,
+});
