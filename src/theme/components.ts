@@ -21,7 +21,7 @@ export const components: Components = {
             root: {
                 textDecoration: 'none',
                 color: defaultTheme.palette.text.primary,
-                transition: 'color 0.2s',
+                transition: 'color 0.3s',
                 '&:hover': {
                     color: defaultTheme.palette.secondary.main,
                 },
@@ -30,7 +30,7 @@ export const components: Components = {
                     color: defaultTheme.palette.text.primary,
                     transition: 'opacity 0.3s',
                     '&:hover': {
-                        opacity: 0.75,
+                        opacity: 0.5,
                     },
                 },
             },

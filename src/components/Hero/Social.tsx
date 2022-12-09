@@ -18,13 +18,13 @@ const socialLinks = [
 
 export function Social() {
     return (
-        <Box>
+        <Box sx={{ position: 'relative', left: '-10px' }}>
             {socialLinks.map(({ Icon, href }) => (
                 <Link
                     href={href}
                     target="_blank"
                     key={href}
-                    sx={{ mr: 2 }}
+                    sx={{ display: 'inline-block', padding: '10px' }}
                     className="uncolored"
                 >
                     <Icon />
