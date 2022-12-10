@@ -110,7 +110,11 @@ export function Projects() {
                                     {description}
                                 </Typography>
                                 {technologies.map((item) => (
-                                    <Chip key={item} label={item} />
+                                    <Chip
+                                        variant="outlined"
+                                        key={item}
+                                        label={item}
+                                    />
                                 ))}
                             </ProjectBox>
                         </Grid>
@@ -141,8 +145,8 @@ const ProjectBox = styled(Box)(({ theme }) => ({
     transition: 'transform 0.3s',
 
     '&:hover': {
-        // transform: 'translateY(-7px)',
-        transform: 'scale(1.03)',
+        transform: 'translateY(-7px)',
+        // transform: 'scale(1.03)',
     },
 }));
 
