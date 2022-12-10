@@ -1,5 +1,16 @@
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-import { Chip, Grid, styled, Typography, Box, Link } from '@mui/material';
+import {
+    Chip,
+    Grid,
+    styled,
+    Typography,
+    Box,
+    Link,
+    useMediaQuery,
+    useTheme,
+    Button,
+} from '@mui/material';
+import { useState } from 'react';
 import { Section } from '../common/Section';
 import { FolderIcon } from '../icons/FolderIcon';
 
@@ -46,13 +57,31 @@ const projectList = [
         technologies: ['Java', 'Spring', 'JPA', 'Java EE', 'Postgres SQL'],
         link: 'https://medium.com/stories-from-upstatement/integrating-algolia-search-with-wordpress-multisite-e2dea3ed449c',
     },
+    {
+        title: 'Integrating Algolia Search with WordPress Multisite',
+        description:
+            'Building a custom multisite compatible WordPress plugin to build global search with Algolia',
+        technologies: ['Java', 'Spring', 'JPA', 'Java EE', 'Postgres SQL'],
+        link: 'https://medium.com/stories-from-upstatement/integrating-algolia-search-with-wordpress-multisite-e2dea3ed449c',
+    },
 ];
 
+const MOBILE_GRID_LIMIT = 4;
+const DESKTOP_GRID_LIMIT = 6;
+
 export function Projects() {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+    const [showMore, setShowMore] = useState(false);
+
+    const gridLimit = isMobile ? MOBILE_GRID_LIMIT : DESKTOP_GRID_LIMIT;
+    const limitedProjects = projectList.slice(0, gridLimit);
+    const projectsToShow = showMore ? projectList : limitedProjects;
+
     return (
         <Section titleOne="my work" titleTwo="Projects">
             <Grid container spacing={3}>
-                {projectList.map(
+                {projectsToShow.map(
                     ({ title, link, description, technologies }) => (
                         <Grid item xs={12} sm={6} md={4} key={title}>
                             <ProjectBox>
@@ -80,7 +109,6 @@ export function Projects() {
                                 >
                                     {title}
                                 </ProjectLink>
-
                                 <Typography
                                     variant="body2"
                                     sx={{ mb: 3, mt: 1 }}
@@ -95,6 +123,15 @@ export function Projects() {
                     )
                 )}
             </Grid>
+            <Box sx={{ display: 'flex', justifyContent: 'center', mt: 5 }}>
+                <Button
+                    onClick={() => setShowMore((prevState) => !prevState)}
+                    variant="outlined"
+                    color="secondary"
+                >
+                    {showMore ? 'Show less' : 'Show more'}
+                </Button>
+            </Box>
         </Section>
     );
 }

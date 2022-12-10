@@ -35,4 +35,11 @@ export const components: Components = {
             },
         },
     },
+    MuiButton: {
+        styleOverrides: {
+            root: {
+                textTransform: 'none',
+            },
+        },
+    },
 };
