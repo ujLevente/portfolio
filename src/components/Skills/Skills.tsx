@@ -1,4 +1,4 @@
-import { Box, Chip, Grid, Typography } from '@mui/material';
+import { Box, Chip, Grid, styled, Typography } from '@mui/material';
 import Image from 'next/image';
 import { Section } from '../common/Section';
 
@@ -93,16 +93,7 @@ export function Skills() {
             <Grid container spacing={2}>
                 {hardSkillList.map(({ name, img }) => (
                     <Grid item key={name} xs={6} sm={4} md={3} lg={2}>
-                        <Box
-                            sx={{
-                                display: 'flex',
-                                border: `2px solid`,
-                                borderColor: 'secondary.main',
-                                borderRadius: '8px',
-                                py: 0.5,
-                                px: 1,
-                            }}
-                        >
+                        <HardSkillsBox>
                             <Image
                                 src={img}
                                 alt={name}
@@ -111,7 +102,7 @@ export function Skills() {
                                 style={{ objectFit: 'contain' }}
                             />
                             <Typography sx={{ ml: 1 }}>{name}</Typography>
-                        </Box>
+                        </HardSkillsBox>
                     </Grid>
                 ))}
             </Grid>
@@ -128,3 +119,14 @@ export function Skills() {
         </Section>
     );
 }
+
+const HardSkillsBox = styled(Box)(({ theme }) => ({
+    display: 'flex',
+    border: `2px solid ${theme.palette.secondary.main}`,
+    borderRadius: '8px',
+    padding: `${theme.spacing(0.5)} ${theme.spacing(1)}`,
+    transition: 'background 0.5s',
+    '&:hover': {
+        background: '#7e74f17a',
+    },
+}));
