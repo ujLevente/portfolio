@@ -86,13 +86,13 @@ export function Skills() {
             <Typography
                 variant="h4"
                 color="primary"
-                sx={{ fontSize: '20px', mb: 3 }}
+                sx={{ fontSize: '20px', mb: 3, color: 'text.secondary' }}
             >
                 Hard skills
             </Typography>
             <Grid container spacing={2}>
                 {hardSkillList.map(({ name, img }) => (
-                    <Grid item key={name} xs={6} sm={4} md={3} lg={2}>
+                    <Grid item key={name} sm="auto" md={3} lg={2}>
                         <HardSkillsBox>
                             <Image
                                 src={img}
@@ -109,13 +109,22 @@ export function Skills() {
             <Typography
                 variant="h4"
                 color="primary"
-                sx={{ fontSize: '20px', my: 3 }}
+                sx={{
+                    fontSize: '20px',
+                    mt: 6,
+                    mb: 3,
+                    color: 'text.secondary',
+                }}
             >
-                Hard skills
+                Soft skills
             </Typography>
-            {softSkills.map((item) => (
-                <Chip key={item} label={item} />
-            ))}
+            <Grid container spacing={2}>
+                {softSkills.map((item) => (
+                    <Grid item key={item}>
+                        <Chip size="medium" label={item} variant="outlined" />
+                    </Grid>
+                ))}
+            </Grid>
         </Section>
     );
 }
