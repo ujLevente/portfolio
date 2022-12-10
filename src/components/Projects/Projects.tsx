@@ -57,13 +57,6 @@ const projectList = [
         technologies: ['Java', 'Spring', 'JPA', 'Java EE', 'Postgres SQL'],
         link: 'https://medium.com/stories-from-upstatement/integrating-algolia-search-with-wordpress-multisite-e2dea3ed449c',
     },
-    {
-        title: 'Integrating Algolia Search with WordPress Multisite',
-        description:
-            'Building a custom multisite compatible WordPress plugin to build global search with Algolia',
-        technologies: ['Java', 'Spring', 'JPA', 'Java EE', 'Postgres SQL'],
-        link: 'https://medium.com/stories-from-upstatement/integrating-algolia-search-with-wordpress-multisite-e2dea3ed449c',
-    },
 ];
 
 const MOBILE_GRID_LIMIT = 4;
@@ -77,6 +70,7 @@ export function Projects() {
     const gridLimit = isMobile ? MOBILE_GRID_LIMIT : DESKTOP_GRID_LIMIT;
     const limitedProjects = projectList.slice(0, gridLimit);
     const projectsToShow = showMore ? projectList : limitedProjects;
+    const showMoreButtonVisible = projectList.length > gridLimit;
 
     return (
         <Section titleOne="my work" titleTwo="Projects">
@@ -123,15 +117,17 @@ export function Projects() {
                     )
                 )}
             </Grid>
-            <Box sx={{ display: 'flex', justifyContent: 'center', mt: 5 }}>
-                <Button
-                    onClick={() => setShowMore((prevState) => !prevState)}
-                    variant="outlined"
-                    color="secondary"
-                >
-                    {showMore ? 'Show less' : 'Show more'}
-                </Button>
-            </Box>
+            {showMoreButtonVisible && (
+                <Box sx={{ display: 'flex', justifyContent: 'center', mt: 5 }}>
+                    <Button
+                        onClick={() => setShowMore((prevState) => !prevState)}
+                        variant="outlined"
+                        color="secondary"
+                    >
+                        {showMore ? 'Show less' : 'Show more'}
+                    </Button>
+                </Box>
+            )}
         </Section>
     );
 }
