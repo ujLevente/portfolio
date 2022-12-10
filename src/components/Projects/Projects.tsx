@@ -1,6 +1,5 @@
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import {
-    Chip,
     Grid,
     styled,
     Typography,
@@ -9,6 +8,7 @@ import {
     useMediaQuery,
     useTheme,
     Button,
+    Chip,
 } from '@mui/material';
 import { useState } from 'react';
 import { Section } from '../common/Section';
@@ -105,17 +105,21 @@ export function Projects() {
                                 </ProjectLink>
                                 <Typography
                                     variant="body2"
-                                    sx={{ mb: 3, mt: 1 }}
+                                    sx={{ mb: 2, mt: 1 }}
                                 >
                                     {description}
                                 </Typography>
-                                {technologies.map((item) => (
-                                    <Chip
-                                        variant="outlined"
-                                        key={item}
-                                        label={item}
-                                    />
-                                ))}
+                                <Grid container spacing={1}>
+                                    {technologies.map((item) => (
+                                        <Grid item key={item}>
+                                            <Chip
+                                                size="small"
+                                                variant="outlined"
+                                                label={item}
+                                            />
+                                        </Grid>
+                                    ))}
+                                </Grid>
                             </ProjectBox>
                         </Grid>
                     )
@@ -143,7 +147,6 @@ const ProjectBox = styled(Box)(({ theme }) => ({
     height: '100%',
     padding: `${theme.spacing(2)} ${theme.spacing(3.5)}`,
     transition: 'transform 0.3s',
-
     '&:hover': {
         transform: 'translateY(-7px)',
         // transform: 'scale(1.03)',
