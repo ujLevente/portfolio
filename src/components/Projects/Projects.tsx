@@ -50,7 +50,7 @@ const projectList = [
 
 export function Projects() {
     return (
-        <Section titleOne="my work" titleTwo="Projects I worked on">
+        <Section titleOne="my work" titleTwo="Projects">
             <Grid container spacing={3}>
                 {projectList.map(
                     ({ title, link, description, technologies }) => (
@@ -61,7 +61,13 @@ export function Projects() {
                                     <Link
                                         href={link}
                                         target="_blank"
-                                        sx={{ lineHeight: 0, zIndex: 1 }}
+                                        sx={{
+                                            lineHeight: 0,
+                                            zIndex: 1,
+                                            padding: '10px',
+                                            position: 'relative',
+                                            right: '-10px',
+                                        }}
                                     >
                                         <OpenInNewIcon color="inherit" />
                                     </Link>
@@ -74,6 +80,7 @@ export function Projects() {
                                 >
                                     {title}
                                 </ProjectLink>
+
                                 <Typography
                                     variant="body2"
                                     sx={{ mb: 3, mt: 1 }}
@@ -97,7 +104,7 @@ const ProjectBox = styled(Box)(({ theme }) => ({
     background: '#7e74f136',
     borderRadius: '8px',
     height: '100%',
-    padding: `${theme.spacing(3.5)} ${theme.spacing(4)}`,
+    padding: `${theme.spacing(2)} ${theme.spacing(3.5)}`,
     transition: 'transform 0.3s',
 
     '&:hover': {
@@ -111,10 +118,10 @@ const ProjectTopBox = styled(Box)(({ theme }) => ({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: theme.spacing(4),
+    marginBottom: theme.spacing(3),
     '&> svg': {
-        width: '50px',
-        height: '50px',
+        width: '45px',
+        height: '45px',
     },
 }));
 
