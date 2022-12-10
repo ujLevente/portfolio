@@ -85,7 +85,6 @@ export function Skills() {
         <Section titleOne="title one" titleTwo="Skills">
             <Typography
                 variant="h4"
-                color="primary"
                 sx={{ fontSize: '20px', mb: 3, color: 'text.secondary' }}
             >
                 Hard skills
@@ -108,7 +107,6 @@ export function Skills() {
             </Grid>
             <Typography
                 variant="h4"
-                color="primary"
                 sx={{
                     fontSize: '20px',
                     mt: 6,
