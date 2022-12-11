@@ -1,5 +1,5 @@
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
-import { Box, Typography } from '@mui/material';
+import { Box, styled, Typography } from '@mui/material';
 import { ExperienceType } from './Experience';
 
 export function ExperienceItemBottom({
@@ -8,19 +8,23 @@ export function ExperienceItemBottom({
     return (
         <Box sx={{ position: 'relative' }}>
             {responsibilities.map((item) => (
-                <Box
-                    key={item}
-                    sx={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        position: 'relative',
-                        left: '-8px',
-                    }}
-                >
-                    <ArrowRightIcon sx={{ color: 'secondary.light' }} />
+                <ResponsibilityBox key={item}>
+                    <ArrowRightIcon
+                        sx={{
+                            color: 'secondary.light',
+                            alignSelf: 'start',
+                            fontSize: '32px',
+                        }}
+                    />
                     <Typography>{item}</Typography>
-                </Box>
+                </ResponsibilityBox>
             ))}
         </Box>
     );
 }
+
+const ResponsibilityBox = styled(Box)(({ theme }) => ({
+    display: 'flex',
+    position: 'relative',
+    left: theme.spacing(-1),
+}));

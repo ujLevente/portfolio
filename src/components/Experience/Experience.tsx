@@ -34,7 +34,7 @@ const experienceList: ExperienceType[] = [
             'Mongo',
         ],
         responsibilities: [
-            'Improving overall website performance for mobile users.',
+            'Improving overall website performance for mobile users. Improving overall website performance for mobile users. formance for mobile users. ',
             'Collaborate with back-end developers and web designers to improve usability',
             'Add voice search feature for mobile app.',
             'Add voice search feature for mobile app.',
@@ -97,7 +97,6 @@ export function Experience() {
 const ExperienceTabs = styled(Tabs)(({ theme }) => ({
     borderColor: 'divider',
     '& .MuiTabs-indicator': {
-        left: 0,
         transition: 'all 0.25s',
         transitionDelay: '0.1s',
         backgroundColor: theme.palette.secondary.main,
@@ -108,7 +107,7 @@ const ExperienceTab = styled(Tab)(({ theme }) => ({
     textTransform: 'initial',
     color: theme.palette.text.primary,
     minWidth: '180px',
-    borderLeft: `2px solid #b5afff36`,
+    borderRight: `2px solid #b5afff36`,
     transition: 'all 0.25s',
     '&:focus, &:hover': {
         background: '#6158c51f',
