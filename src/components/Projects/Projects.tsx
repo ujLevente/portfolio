@@ -142,7 +142,7 @@ export function Projects() {
 
 const ProjectBox = styled(Box)(({ theme }) => ({
     position: 'relative',
-    background: '#7e74f136',
+    background: theme.palette.secondary.dark,
     borderRadius: '8px',
     height: '100%',
     padding: `${theme.spacing(2)} ${theme.spacing(3.5)}`,

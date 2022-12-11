@@ -2,6 +2,7 @@ import { TypographyOptions } from '@mui/material/styles/createTypography';
 import { defaultTheme } from './default-theme';
 
 export const typography: TypographyOptions = {
+    fontFamily: 'Inter',
     h1: {
         fontFamily: 'Plus Jakarta Sans',
         fontWeight: 700,
@@ -20,7 +21,6 @@ export const typography: TypographyOptions = {
         color: defaultTheme.palette.text.secondary,
     },
     h3: {
-        fontFamily: 'Inter',
         fontWeight: 500,
         fontSize: '12px',
         lineHeight: '24px',
@@ -36,15 +36,18 @@ export const typography: TypographyOptions = {
         color: 'white',
     },
     body1: {
-        fontFamily: 'Inter',
         fontWeight: 400,
         fontSize: '16px',
         lineHeight: '32px',
     },
     body2: {
-        fontFamily: 'Inter',
         fontWeight: 400,
         fontSize: '14px',
         lineHeight: '27px',
+    },
+    button: {
+        fontWeight: 500,
+        fontSize: '16px',
+        lineHeight: '32px',
     },
 };

@@ -9,6 +9,7 @@ export const palette: PaletteOptions = {
     },
     secondary: {
         main: '#7E74F1',
+        dark: '#7e74f136',
     },
     text: {
         primary: '#f1f1f1b3',
