@@ -6,14 +6,14 @@ export function HeroImage() {
         <ContainerBox>
             <ImageContainerBox>
                 <Image
-                    src="/profil.png"
+                    src="/IMG_8040.jpg"
                     objectFit="contain"
                     alt="profil"
                     layout="fill"
                     style={{
-                        left: '-63px',
-                        top: '34px',
-                        transform: 'scale(1.4)',
+                        left: '-12px',
+                        top: '0px',
+                        transform: 'scale(1.3)',
                     }}
                 />
             </ImageContainerBox>
@@ -38,20 +38,21 @@ const ContainerBox = styled(Box)(({ theme }) => ({
 }));
 
 const ImageContainerBox = styled(Box)(({ theme }) => ({
-    borderRadius: '16px',
+    borderRadius: '23px',
     width: '336px',
     height: '400px',
     position: 'relative',
     overflow: 'hidden',
     zIndex: 10,
     backgroundColor: '#EAE6FE',
+    border: '2px solid #9389ff',
     [theme.breakpoints.down('sm')]: {
         transform: 'scale(0.7)',
     },
 }));
 
 const ImageFigureBox = styled(Box)(({ theme }) => ({
-    borderRadius: '16px',
+    borderRadius: '23px',
     width: '336px',
     height: '400px',
     position: 'absolute',
