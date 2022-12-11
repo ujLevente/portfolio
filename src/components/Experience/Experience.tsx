@@ -72,7 +72,7 @@ export function Experience() {
                     flexGrow: 1,
                     display: 'flex',
                     flexDirection: { xs: 'column', md: 'row' },
-                    // height: 1224,
+                    height: { sm: 400, xs: '70vh' },
                 }}
             >
                 <ExperienceTabs
@@ -99,10 +99,24 @@ export function Experience() {
 
 const ExperienceTabs = styled(Tabs)(({ theme }) => ({
     borderColor: 'divider',
+    position: 'relative',
+
     '& .MuiTabs-indicator': {
         transition: 'all 0.25s',
         transitionDelay: '0.1s',
         backgroundColor: theme.palette.secondary.main,
+    },
+
+    [theme.breakpoints.down('md')]: {
+        '&:after': {
+            content: '""',
+            width: '100%',
+            borderBottom: 'solid 1px #b5afff36',
+            position: 'absolute',
+            left: 0,
+            bottom: 0,
+            zIndex: -1,
+        },
     },
 }));
 
@@ -124,6 +138,5 @@ const ExperienceTab = styled(Tab)(({ theme }) => ({
 
     [theme.breakpoints.down('md')]: {
         borderRight: 0,
-        borderBottom: `2px solid #b5afff36`,
     },
 }));

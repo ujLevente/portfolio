@@ -1,3 +1,4 @@
+import { Contact } from '../src/components/Contact';
 import { Experience } from '../src/components/Experience';
 import { Hero } from '../src/components/Hero';
 import { Projects } from '../src/components/Projects';
@@ -7,9 +8,10 @@ export default function Main() {
     return (
         <>
             <Hero />
-            <Skills />
-            <Projects />
             <Experience />
+            <Projects />
+            <Skills />
+            <Contact />
         </>
     );
 }
