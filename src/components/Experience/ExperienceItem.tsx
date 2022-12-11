@@ -14,7 +14,7 @@ export function ExperienceItem({ item, active }: ExperienceItemProps) {
     return (
         <Box role="tabpanel" hidden={!active} sx={{ flex: 1 }}>
             {active && (
-                <Box sx={{ pl: 5 }}>
+                <Box sx={{ pl: { md: 5 }, pt: { xs: 5, md: 0 } }}>
                     <ExperienceItemHeader {...item} />
                     <Grid container spacing={1}>
                         {technologies.map((item) => (

@@ -23,14 +23,12 @@ export function ExperienceItemHeader(
 
     return (
         <>
-            <Box sx={{ display: 'flex', alignItems: 'end', mb: 1 }}>
-                <Typography variant="h4" sx={{ mr: 1 }}>
-                    {role}
-                </Typography>
-                <CompanyLink href={url} target="_blank" variant="h4">
-                    <span>@</span> {company}
-                </CompanyLink>
-            </Box>
+            <Typography variant="h4" sx={{ mr: 1, display: 'inline-block' }}>
+                {role}
+            </Typography>
+            <CompanyLink href={url} target="_blank" variant="h4">
+                <span>@</span> {company}
+            </CompanyLink>
             <LocationBox>
                 <LocationOnIcon sx={{ mr: 0.5, fontSize: '16px' }} />
                 <Typography variant="body2">{location}</Typography>
@@ -45,8 +43,9 @@ export function ExperienceItemHeader(
 const CompanyLink = styled(Link)(({ theme }) => ({
     color: theme.palette.secondary.main,
     transition: 'opacity 0.3s',
+    display: 'inline-block',
     '&:hover': {
-        opacity: 0.75,
+        opacity: 0.7,
     },
     '& span': {
         // Plus Jakarta Sans font family places @ too much below
@@ -59,5 +58,6 @@ const LocationBox = styled(Box)(({ theme }) => ({
     display: 'flex',
     alignItems: 'center',
     alignContent: 'center',
+    marginTop: theme.spacing(1),
     marginBottom: theme.spacing(1.5),
 }));

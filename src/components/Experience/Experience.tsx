@@ -1,4 +1,4 @@
-import { Box, Tab, Tabs } from '@mui/material';
+import { Box, Tab, Tabs, useMediaQuery, useTheme } from '@mui/material';
 import { styled } from '@mui/system';
 import { useState } from 'react';
 import { Section } from '../common/Section';
@@ -60,9 +60,10 @@ const experienceList: ExperienceType[] = [
         company: 'Webtown-Informatika kft.',
     },
 ];
-
 export function Experience() {
     const [value, setValue] = useState(0);
+    const theme = useTheme();
+    const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
 
     return (
         <Section titleOne="career path" titleTwo="Work Experices">
@@ -70,10 +71,12 @@ export function Experience() {
                 sx={{
                     flexGrow: 1,
                     display: 'flex',
+                    flexDirection: { xs: 'column', md: 'row' },
+                    // height: 1224,
                 }}
             >
                 <ExperienceTabs
-                    orientation="vertical"
+                    orientation={isDesktop ? 'vertical' : 'horizontal'}
                     variant="scrollable"
                     value={value}
                     onChange={(_, newValue) => setValue(newValue)}
@@ -107,13 +110,20 @@ const ExperienceTab = styled(Tab)(({ theme }) => ({
     textTransform: 'initial',
     color: theme.palette.text.primary,
     minWidth: '180px',
-    borderRight: `2px solid #b5afff36`,
     transition: 'all 0.25s',
-    '&:focus, &:hover': {
+    borderRight: `2px solid #b5afff36`,
+
+    '&:hover': {
         background: '#6158c51f',
         color: theme.palette.secondary.main,
     },
     '&.Mui-selected': {
+        background: '#6158c51f',
         color: theme.palette.secondary.main,
+    },
+
+    [theme.breakpoints.down('md')]: {
+        borderRight: 0,
+        borderBottom: `2px solid #b5afff36`,
     },
 }));
