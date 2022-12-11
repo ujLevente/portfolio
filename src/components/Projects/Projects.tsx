@@ -11,8 +11,8 @@ import {
     Chip,
 } from '@mui/material';
 import { useState } from 'react';
+import { FolderIcon } from '../common/icons/FolderIcon';
 import { Section } from '../common/Section';
-import { FolderIcon } from '../icons/FolderIcon';
 
 const projectList = [
     {

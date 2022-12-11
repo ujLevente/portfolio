@@ -7,6 +7,7 @@ import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
 import { PropsWithChildren, useState } from 'react';
 import { NAV_ITEMS } from '../../constants';
+import { Footer } from '../Footer';
 import { DrawerNavigation } from './DrawerNavigation';
 
 export function Layout({ children }: PropsWithChildren) {
@@ -43,10 +44,10 @@ export function Layout({ children }: PropsWithChildren) {
                 drawerOpen={drawerOpen}
                 handleDrawerToggle={handleDrawerToggle}
             />
-
             <Container maxWidth="lg" component="main">
                 <Box sx={{ px: 2 }}>{children}</Box>
             </Container>
+            <Footer />
         </Box>
     );
 }
