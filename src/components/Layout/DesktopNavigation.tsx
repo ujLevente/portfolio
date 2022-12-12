@@ -27,6 +27,7 @@ export function DesktopNavigation() {
 const ContainerBox = styled(Box)(({ theme }) => ({
     width: '100%',
     position: 'relative',
+    textAlign: 'center',
     [theme.breakpoints.down('md')]: {
         display: 'none',
     },
@@ -37,6 +38,9 @@ const NavItem = styled(Link)(({ theme }) => ({
     marginRight: theme.spacing(8),
     padding: theme.spacing(1),
     fontWeight: 500,
+    '&:last-of-type': {
+        marginRight: 0,
+    },
 }));
 
 const CopyUrlTooltip = styled(Tooltip)(({ theme }) => ({
