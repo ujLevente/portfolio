@@ -17,7 +17,7 @@ export function HeroImage() {
                     }}
                 />
             </ImageContainerBox>
-            <ImageFigureBox />
+            <ImageFigureBox className="image-figure" />
         </ContainerBox>
     );
 }
@@ -49,9 +49,14 @@ const ImageContainerBox = styled(Box)(({ theme }) => ({
     [theme.breakpoints.down('sm')]: {
         transform: 'scale(0.7)',
     },
+    '&:hover + .image-figure': {
+        transform: 'rotate(-16deg)',
+    },
 }));
 
 const ImageFigureBox = styled(Box)(({ theme }) => ({
+    transition: 'transform 0.6s',
+    transitionDelay: '0.05s',
     borderRadius: '23px',
     width: '336px',
     height: '400px',
