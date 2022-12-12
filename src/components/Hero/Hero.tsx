@@ -27,12 +27,12 @@ const ContainerBox = styled(Box)(({ theme }) => ({
 }));
 
 const ScrollDown = styled(Typography)(({ theme }) => ({
-    transform: 'translate(0, -50%)',
+    transform: 'translate(-50%, 0)',
     left: '50%',
     position: 'absolute',
     color: 'white',
     padding: `${theme.spacing(5)} 20px 0 20px`,
-    bottom: theme.spacing(1),
+    bottom: theme.spacing(2),
     '&:hover': {
         cursor: 'pointer',
         '&:before': {
