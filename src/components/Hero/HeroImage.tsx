@@ -49,8 +49,10 @@ const ImageContainerBox = styled(Box)(({ theme }) => ({
     [theme.breakpoints.down('sm')]: {
         transform: 'scale(0.7)',
     },
-    '&:hover + .image-figure': {
-        transform: 'rotate(-14deg)',
+    [theme.breakpoints.up('sm')]: {
+        '&:hover + .image-figure': {
+            transform: 'rotate(-14deg)',
+        },
     },
 }));
 
