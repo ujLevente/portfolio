@@ -1,8 +1,8 @@
+import LinkIcon from '@mui/icons-material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Container } from '@mui/material';
+import { Container, Link, Tooltip } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
 import { PropsWithChildren, useState } from 'react';
@@ -18,24 +18,81 @@ export function Layout({ children }: PropsWithChildren) {
     };
 
     return (
-        <Box sx={{ display: 'flex' }}>
-            <AppBar component="nav">
+        <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+            <AppBar
+                component="nav"
+                position="static"
+                sx={{
+                    position: 'absolute',
+                    bgcolor: 'background.default',
+                    boxShadow: 'none',
+                    zIndex: '2',
+                    pt: 2,
+                }}
+            >
                 <Container maxWidth="lg">
-                    <Toolbar>
+                    <Toolbar sx={{ px: { xs: 1 } }}>
                         <IconButton
-                            color="inherit"
                             edge="start"
                             onClick={handleDrawerToggle}
-                            sx={{ mr: 2, display: { sm: 'none' } }}
+                            sx={{
+                                mr: 2,
+                                display: { md: 'none' },
+                                color: 'primary.light',
+                            }}
                         >
-                            <MenuIcon />
+                            <MenuIcon
+                                sx={{
+                                    fontSize: '40px',
+                                }}
+                            />
                         </IconButton>
-                        <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+                        <Box
+                            sx={{
+                                display: {
+                                    xs: 'none',
+                                    md: 'flex',
+                                    alignItems: 'center',
+                                    width: '100%',
+                                    position: 'relative',
+                                },
+                            }}
+                        >
                             {NAV_ITEMS.map((item) => (
-                                <Button key={item} sx={{ color: '#fff' }}>
+                                <Link
+                                    key={item}
+                                    sx={{
+                                        color: '#f1f1f1',
+                                        mr: 8,
+                                        p: 1,
+                                        fontWeight: 500,
+                                    }}
+                                >
                                     {item}
-                                </Button>
+                                </Link>
                             ))}
+                            <Tooltip
+                                title="Copy page url"
+                                sx={{
+                                    display: { sm: 'none', md: 'inline-flex' },
+                                    position: 'absolute',
+                                    right: 0,
+                                    top: '50%',
+                                    transform: 'translateY(-50%)',
+                                }}
+                            >
+                                <IconButton
+                                    onClick={() =>
+                                        navigator.clipboard.writeText(
+                                            window.location.origin
+                                        )
+                                    }
+                                >
+                                    <LinkIcon
+                                        sx={{ color: 'text.secondary' }}
+                                    />
+                                </IconButton>
+                            </Tooltip>
                         </Box>
                     </Toolbar>
                 </Container>

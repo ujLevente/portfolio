@@ -23,6 +23,7 @@ export const components: Components = {
                 transition: 'color 0.3s',
                 '&:hover': {
                     color: defaultTheme.palette.secondary.main,
+                    cursor: 'pointer',
                 },
 
                 '&.uncolored': {
