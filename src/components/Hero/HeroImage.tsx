@@ -50,7 +50,7 @@ const ImageContainerBox = styled(Box)(({ theme }) => ({
         transform: 'scale(0.7)',
     },
     '&:hover + .image-figure': {
-        transform: 'rotate(-16deg)',
+        transform: 'rotate(-14deg)',
     },
 }));
 
