@@ -1,13 +1,12 @@
-import LinkIcon from '@mui/icons-material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Container, Link, Tooltip } from '@mui/material';
+import { Container, styled } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
 import { PropsWithChildren, useState } from 'react';
-import { NAV_ITEMS } from '../../constants';
 import { Footer } from '../Footer';
+import { DesktopNavigation } from './DesktopNavigation';
 import { DrawerNavigation } from './DrawerNavigation';
 
 export function Layout({ children }: PropsWithChildren) {
@@ -19,85 +18,19 @@ export function Layout({ children }: PropsWithChildren) {
 
     return (
         <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-            <AppBar
-                component="nav"
-                position="static"
-                sx={{
-                    position: 'absolute',
-                    bgcolor: 'background.default',
-                    boxShadow: 'none',
-                    zIndex: '2',
-                    pt: 2,
-                }}
-            >
+            <NavigationAppbar position="static">
                 <Container maxWidth="lg">
                     <Toolbar sx={{ px: { xs: 1 } }}>
-                        <IconButton
+                        <HamburgerMenu
                             edge="start"
                             onClick={handleDrawerToggle}
-                            sx={{
-                                mr: 2,
-                                display: { md: 'none' },
-                                color: 'primary.light',
-                            }}
                         >
-                            <MenuIcon
-                                sx={{
-                                    fontSize: '40px',
-                                }}
-                            />
-                        </IconButton>
-                        <Box
-                            sx={{
-                                display: {
-                                    xs: 'none',
-                                    md: 'flex',
-                                    alignItems: 'center',
-                                    width: '100%',
-                                    position: 'relative',
-                                },
-                            }}
-                        >
-                            {NAV_ITEMS.map((item) => (
-                                <Link
-                                    key={item}
-                                    sx={{
-                                        color: '#f1f1f1',
-                                        mr: 8,
-                                        p: 1,
-                                        fontWeight: 500,
-                                    }}
-                                >
-                                    {item}
-                                </Link>
-                            ))}
-                            <Tooltip
-                                title="Copy page url"
-                                sx={{
-                                    display: { sm: 'none', md: 'inline-flex' },
-                                    position: 'absolute',
-                                    right: 0,
-                                    top: '50%',
-                                    transform: 'translateY(-50%)',
-                                }}
-                            >
-                                <IconButton
-                                    onClick={() =>
-                                        navigator.clipboard.writeText(
-                                            window.location.origin
-                                        )
-                                    }
-                                    color="primary"
-                                >
-                                    <LinkIcon
-                                        sx={{ color: 'text.secondary' }}
-                                    />
-                                </IconButton>
-                            </Tooltip>
-                        </Box>
+                            <MenuIcon />
+                        </HamburgerMenu>
+                        <DesktopNavigation />
                     </Toolbar>
                 </Container>
-            </AppBar>
+            </NavigationAppbar>
             <DrawerNavigation
                 drawerOpen={drawerOpen}
                 handleDrawerToggle={handleDrawerToggle}
@@ -109,3 +42,25 @@ export function Layout({ children }: PropsWithChildren) {
         </Box>
     );
 }
+
+const NavigationAppbar = styled(AppBar)(({ theme }) => ({
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    background: theme.palette.background.default,
+    boxShadow: 'none',
+    zIndex: '2',
+    paddingTop: theme.spacing(2),
+}));
+
+const HamburgerMenu = styled(IconButton)(({ theme }) => ({
+    marginRight: 2,
+    color: theme.palette.primary.light,
+    '& svg': {
+        fontSize: '36px',
+    },
+
+    [theme.breakpoints.up('md')]: {
+        display: 'none',
+    },
+}));
