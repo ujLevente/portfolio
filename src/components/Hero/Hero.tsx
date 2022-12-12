@@ -31,7 +31,7 @@ const ScrollDown = styled(Typography)(({ theme }) => ({
     left: '50%',
     position: 'absolute',
     color: 'white',
-    paddingTop: theme.spacing(5),
+    padding: `${theme.spacing(5)} 20px 0 20px`,
     bottom: theme.spacing(1),
     '&:hover': {
         cursor: 'pointer',
