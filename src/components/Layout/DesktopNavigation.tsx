@@ -7,8 +7,11 @@ import { NAV_ITEMS } from '../../constants';
 export function DesktopNavigation() {
     return (
         <ContainerBox>
-            {NAV_ITEMS.map((item) => (
-                <NavItem key={item}>{item}</NavItem>
+            {NAV_ITEMS.map((item, i) => (
+                <NavItem key={item}>
+                    <span style={{ color: '#594bff' }}>{`0${i + 1}. `}</span>
+                    {item}
+                </NavItem>
             ))}
             <CopyUrlTooltip title="Copy page url">
                 <IconButton
@@ -40,6 +43,9 @@ const NavItem = styled(Link)(({ theme }) => ({
     fontWeight: 500,
     '&:last-of-type': {
         marginRight: 0,
+    },
+    '&:hover': {
+        color: '#594bff',
     },
 }));
 
