@@ -87,6 +87,7 @@ export function Layout({ children }: PropsWithChildren) {
                                             window.location.origin
                                         )
                                     }
+                                    color="primary"
                                 >
                                     <LinkIcon
                                         sx={{ color: 'text.secondary' }}
