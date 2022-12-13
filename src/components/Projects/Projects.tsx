@@ -81,17 +81,7 @@ export function Projects() {
                             <ProjectBox>
                                 <ProjectTopBox>
                                     <FolderIcon />
-                                    <Link
-                                        href={link}
-                                        target="_blank"
-                                        sx={{
-                                            lineHeight: 0,
-                                            zIndex: 1,
-                                            padding: '10px',
-                                            position: 'relative',
-                                            right: '-10px',
-                                        }}
-                                    >
+                                    <Link href={link} target="_blank">
                                         <OpenInNewIcon color="inherit" />
                                     </Link>
                                 </ProjectTopBox>
@@ -99,7 +89,6 @@ export function Projects() {
                                     href={link}
                                     target="_blank"
                                     variant="h4"
-                                    sx={{ color: 'white' }}
                                 >
                                     {title}
                                 </ProjectLink>
@@ -163,9 +152,17 @@ const ProjectTopBox = styled(Box)(({ theme }) => ({
         width: '45px',
         height: '45px',
     },
+    '&> a': {
+        lineHeight: 0,
+        zIndex: 1,
+        padding: '10px',
+        position: 'relative',
+        right: '-10px',
+    },
 }));
 
 const ProjectLink = styled(Link)(() => ({
+    color: '#f1f1f1',
     '&:before': {
         content: '""',
         display: 'block',
