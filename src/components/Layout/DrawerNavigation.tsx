@@ -1,11 +1,9 @@
+import CloseIcon from '@mui/icons-material/Close';
+import { IconButton, styled, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
-import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import Typography from '@mui/material/Typography';
 import * as React from 'react';
 import { NAV_ITEMS } from '../../constants';
 
@@ -20,37 +18,70 @@ export function DrawerNavigation({
 }: DrawerNavigationProps) {
     return (
         <Box component="nav">
-            <Drawer
+            <StyledDrawer
                 variant="temporary"
                 open={drawerOpen}
                 onClose={handleDrawerToggle}
                 ModalProps={{
                     keepMounted: true, // Better open performance on mobile.
                 }}
-                sx={{
-                    display: { xs: 'block', md: 'none' },
-                    '& .MuiDrawer-paper': {
-                        boxSizing: 'border-box',
-                        width: 240,
-                    },
-                }}
             >
-                <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-                    <Typography variant="h6" sx={{ my: 2 }}>
-                        MUI
-                    </Typography>
-                    <Divider />
+                <CloseIconButton edge="end" onClick={handleDrawerToggle}>
+                    <CloseIcon />
+                </CloseIconButton>
+                <Box
+                    onClick={handleDrawerToggle}
+                    sx={{ textAlign: 'center', m: 'auto 0' }}
+                >
                     <List>
-                        {NAV_ITEMS.map((item) => (
+                        {NAV_ITEMS.map((item, i) => (
                             <ListItem key={item} disablePadding>
-                                <ListItemButton sx={{ textAlign: 'center' }}>
-                                    <ListItemText primary={item} />
-                                </ListItemButton>
+                                <NavItem>
+                                    <span>{`0${i + 1}. `}</span>
+                                    <Typography>{item}</Typography>
+                                </NavItem>
                             </ListItem>
                         ))}
                     </List>
                 </Box>
-            </Drawer>
+            </StyledDrawer>
         </Box>
     );
 }
+
+const StyledDrawer = styled(Drawer)(({ theme }) => ({
+    [theme.breakpoints.up('md')]: {
+        display: 'none',
+    },
+    '& .MuiDrawer-paper': {
+        background: '#1a2026',
+        boxSizing: 'border-box',
+        width: 'min(75vw, 400px)',
+        margin: 'auto 0',
+    },
+}));
+
+const CloseIconButton = styled(IconButton)(({ theme }) => ({
+    position: 'absolute',
+    left: theme.spacing(2),
+    top: theme.spacing(2),
+    '& svg': {
+        fontSize: '36px',
+        color: theme.palette.primary.main,
+    },
+}));
+
+const NavItem = styled(ListItem)(({ theme }) => ({
+    display: 'flex',
+    flexDirection: 'column',
+    marginBottom: 2,
+    '& span:first-of-type': {
+        color: theme.palette.secondary.light,
+        lineHeight: '17px',
+        fontSize: '14px',
+    },
+    '& .MuiTypography-root': {
+        fontWeight: 500,
+        fontSize: '18px',
+    },
+}));

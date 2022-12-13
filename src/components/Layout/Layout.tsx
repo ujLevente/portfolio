@@ -55,7 +55,7 @@ const NavigationAppbar = styled(AppBar)(({ theme }) => ({
 
 const HamburgerMenu = styled(IconButton)(({ theme }) => ({
     marginRight: 2,
-    color: theme.palette.primary.light,
+    color: theme.palette.primary.main,
     '& svg': {
         fontSize: '36px',
     },
