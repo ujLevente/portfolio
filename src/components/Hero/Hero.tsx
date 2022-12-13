@@ -17,12 +17,8 @@ const ContainerBox = styled(Box)(({ theme }) => ({
     display: 'flex',
     position: 'relative',
     [theme.breakpoints.down('md')]: {
-        flexDirection: 'column-reverse',
+        flexDirection: 'column',
         height: 'initial',
-        paddingTop: theme.spacing(20),
-    },
-    [theme.breakpoints.down('sm')]: {
-        paddingTop: theme.spacing(12),
     },
 }));
 
@@ -36,7 +32,7 @@ const ScrollDown = styled(Typography)(({ theme }) => ({
     '&:hover': {
         cursor: 'pointer',
         '&:before': {
-            top: '5px',
+            top: theme.spacing(0.6),
         },
     },
     '&:before': {
@@ -51,5 +47,8 @@ const ScrollDown = styled(Typography)(({ theme }) => ({
         transform: 'translate(calc(50% - 2px), 0) rotate(-45deg)',
         transition: 'top 0.3s',
         transitionDelay: '0.05s',
+    },
+    [theme.breakpoints.down('md')]: {
+        display: 'none',
     },
 }));

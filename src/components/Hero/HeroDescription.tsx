@@ -35,8 +35,9 @@ const ContainerBox = styled(Box)(({ theme }) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     flex: 1,
-    paddingRight: '64px',
+    paddingRight: theme.spacing(8),
     [theme.breakpoints.down('md')]: {
-        paddingRight: '16px',
+        paddingRight: 0,
+        minHeight: '100vh',
     },
 }));

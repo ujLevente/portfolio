@@ -30,25 +30,26 @@ const ContainerBox = styled(Box)(({ theme }) => ({
     alignItems: 'end',
     [theme.breakpoints.down('md')]: {
         alignItems: 'center',
-        marginBottom: theme.spacing(10),
-    },
-    [theme.breakpoints.down('sm')]: {
-        marginBottom: theme.spacing(3),
+        marginTop: theme.spacing(3),
     },
 }));
 
-const ImageContainerBox = styled(Box)(({ theme }) => ({
-    borderRadius: '23px',
+const ImageBase = styled(Box)(({ theme }) => ({
     width: '336px',
     height: '400px',
+    borderRadius: '23px',
+    [theme.breakpoints.down('sm')]: {
+        width: 'calc(336px * 0.7)',
+        height: 'calc(400px * 0.7)',
+    },
+}));
+
+const ImageContainerBox = styled(ImageBase)(({ theme }) => ({
     position: 'relative',
     overflow: 'hidden',
     zIndex: 10,
     backgroundColor: '#EAE6FE',
     border: '2px solid #9389ff',
-    [theme.breakpoints.down('sm')]: {
-        transform: 'scale(0.7)',
-    },
     [theme.breakpoints.up('sm')]: {
         '&:hover + .image-figure': {
             transform: 'rotate(-14deg)',
@@ -56,16 +57,13 @@ const ImageContainerBox = styled(Box)(({ theme }) => ({
     },
 }));
 
-const ImageFigureBox = styled(Box)(({ theme }) => ({
+const ImageFigureBox = styled(ImageBase)(({ theme }) => ({
     transition: 'transform 0.6s',
     transitionDelay: '0.05s',
-    borderRadius: '23px',
-    width: '336px',
-    height: '400px',
     position: 'absolute',
     backgroundColor: '#7E74F1',
     transform: 'rotate(-9.55deg)',
     [theme.breakpoints.down('sm')]: {
-        transform: 'rotate(-9.55deg) scale(0.7)',
+        transform: 'rotate(-9.55deg)',
     },
 }));
