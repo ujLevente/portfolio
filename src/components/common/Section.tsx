@@ -12,7 +12,7 @@ export function Section({
     children,
 }: SectionProps & PropsWithChildren) {
     return (
-        <Box sx={{ mt: 4 }}>
+        <Box component="section" sx={{ py: 8 }}>
             <Typography variant="h3" gutterBottom>
                 - {titleOne}
             </Typography>

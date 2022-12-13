@@ -72,7 +72,7 @@ export function Experience() {
                     flexGrow: 1,
                     display: 'flex',
                     flexDirection: { xs: 'column', md: 'row' },
-                    height: { sm: 400, xs: '70vh' },
+                    minHeight: 400,
                 }}
             >
                 <ExperienceTabs
@@ -100,13 +100,11 @@ export function Experience() {
 const ExperienceTabs = styled(Tabs)(({ theme }) => ({
     borderColor: 'divider',
     position: 'relative',
-
     '& .MuiTabs-indicator': {
         transition: 'all 0.25s',
         transitionDelay: '0.1s',
         backgroundColor: theme.palette.secondary.main,
     },
-
     [theme.breakpoints.down('md')]: {
         '&:after': {
             content: '""',
