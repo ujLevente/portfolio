@@ -39,5 +39,5 @@ const DividerBox = styled(Box)(({ theme }) => ({
     width: '100%',
     height: '1px',
     backgroundColor: theme.palette.divider,
-    margin: `${theme.spacing(1.5)} 0`,
+    margin: `${theme.spacing(3)} 0`,
 }));

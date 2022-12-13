@@ -138,7 +138,6 @@ const ProjectBox = styled(Box)(({ theme }) => ({
     transition: 'transform 0.3s',
     '&:hover': {
         transform: 'translateY(-7px)',
-        // transform: 'scale(1.03)',
     },
 }));
 
@@ -159,9 +158,12 @@ const ProjectTopBox = styled(Box)(({ theme }) => ({
         position: 'relative',
         right: '-10px',
     },
+    [theme.breakpoints.down('md')]: {
+        marginBottom: theme.spacing(2),
+    },
 }));
 
-const ProjectLink = styled(Link)(() => ({
+const ProjectLink = styled(Link)(({ theme }) => ({
     color: '#f1f1f1',
     '&:before': {
         content: '""',
@@ -172,5 +174,8 @@ const ProjectLink = styled(Link)(() => ({
         height: '100%',
         top: 0,
         left: 0,
+    },
+    [theme.breakpoints.down('md')]: {
+        fontSize: '16px',
     },
 }));

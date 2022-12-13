@@ -31,7 +31,7 @@ const ContainerBox = styled(Box)(({ theme }) => ({
     [theme.breakpoints.down('md')]: {
         alignItems: 'center',
         marginTop: theme.spacing(3),
-        marginBottom: theme.spacing(15),
+        marginBottom: theme.spacing(10),
     },
 }));
 

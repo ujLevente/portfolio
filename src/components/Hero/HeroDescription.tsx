@@ -15,12 +15,18 @@ export function HeroDescription() {
                 sx={{
                     mb: 3,
                     color: 'secondary.main',
-                    fontSize: '25px',
+                    fontSize: { xs: '20px', md: '25px' },
                 }}
             >
                 Creative front-end developer
             </Typography>
-            <Typography sx={{ mb: 2 }}>
+            <Typography
+                sx={{
+                    mb: 2,
+                    fontSize: { xs: '14px', md: '16px' },
+                    lineHeight: { xs: '27px', md: '32px' },
+                }}
+            >
                 Creative front-end developer with more than +2 years of
                 experience in enterprise companies and startups. Proficient in
                 Html, Tailwind Css, Javascript and React. Passionate about UI/UX
@@ -39,5 +45,6 @@ const ContainerBox = styled(Box)(({ theme }) => ({
     [theme.breakpoints.down('md')]: {
         paddingRight: 0,
         minHeight: '100vh',
+        paddingBottom: '10vh',
     },
 }));

@@ -16,7 +16,7 @@ export const typography: TypographyOptions = {
     h2: {
         fontFamily: 'Plus Jakarta Sans',
         fontWeight: 700,
-        fontSize: '36px',
+        fontSize: '32px',
         lineHeight: '45.36px',
         color: defaultTheme.palette.text.secondary,
     },
