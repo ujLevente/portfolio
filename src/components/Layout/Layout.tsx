@@ -24,6 +24,9 @@ export function Layout({ children }: PropsWithChildren) {
                         <HamburgerMenu
                             edge="start"
                             onClick={handleDrawerToggle}
+                            sx={{
+                                visibility: drawerOpen ? 'hidden' : 'visible',
+                            }}
                         >
                             <MenuIcon />
                         </HamburgerMenu>
@@ -54,7 +57,6 @@ const NavigationAppbar = styled(AppBar)(({ theme }) => ({
 }));
 
 const HamburgerMenu = styled(IconButton)(({ theme }) => ({
-    marginRight: 2,
     color: theme.palette.primary.main,
     '& svg': {
         fontSize: '36px',

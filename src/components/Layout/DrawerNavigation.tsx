@@ -1,5 +1,14 @@
 import CloseIcon from '@mui/icons-material/Close';
-import { IconButton, styled, Typography } from '@mui/material';
+
+import {
+    Container,
+    IconButton,
+    ListItemButton,
+    ListItemIcon,
+    ListItemText,
+    styled,
+    Toolbar,
+} from '@mui/material';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
@@ -26,24 +35,29 @@ export function DrawerNavigation({
                     keepMounted: true, // Better open performance on mobile.
                 }}
             >
-                <CloseIconButton edge="end" onClick={handleDrawerToggle}>
-                    <CloseIcon />
-                </CloseIconButton>
-                <Box
-                    onClick={handleDrawerToggle}
-                    sx={{ textAlign: 'center', m: 'auto 0' }}
-                >
+                <Container maxWidth="lg">
+                    <Toolbar sx={{ px: { xs: 1 } }}>
+                        <IconButton edge="start" onClick={handleDrawerToggle}>
+                            <CloseIcon
+                                sx={{ fontSize: '36px', color: 'primary.main' }}
+                            />
+                        </IconButton>
+                    </Toolbar>
                     <List>
-                        {NAV_ITEMS.map((item, i) => (
-                            <ListItem key={item} disablePadding>
-                                <NavItem>
-                                    <span>{`0${i + 1}. `}</span>
-                                    <Typography>{item}</Typography>
-                                </NavItem>
+                        {NAV_ITEMS.map(({ name, Icon }) => (
+                            <ListItem key={name} disablePadding>
+                                <ListItemButton sx={{ paddingLeft: 1 }}>
+                                    <ListItemIcon
+                                        sx={{ color: 'primary.main' }}
+                                    >
+                                        <Icon />
+                                    </ListItemIcon>
+                                    <ListItemText primary={name} />
+                                </ListItemButton>
                             </ListItem>
                         ))}
                     </List>
-                </Box>
+                </Container>
             </StyledDrawer>
         </Box>
     );
@@ -54,34 +68,9 @@ const StyledDrawer = styled(Drawer)(({ theme }) => ({
         display: 'none',
     },
     '& .MuiDrawer-paper': {
-        background: '#1a2026',
+        background: '#282551e3',
         boxSizing: 'border-box',
         width: 'min(75vw, 400px)',
-        margin: 'auto 0',
-    },
-}));
-
-const CloseIconButton = styled(IconButton)(({ theme }) => ({
-    position: 'absolute',
-    left: theme.spacing(2),
-    top: theme.spacing(2),
-    '& svg': {
-        fontSize: '36px',
-        color: theme.palette.primary.main,
-    },
-}));
-
-const NavItem = styled(ListItem)(({ theme }) => ({
-    display: 'flex',
-    flexDirection: 'column',
-    marginBottom: 2,
-    '& span:first-of-type': {
-        color: theme.palette.secondary.light,
-        lineHeight: '17px',
-        fontSize: '14px',
-    },
-    '& .MuiTypography-root': {
-        fontWeight: 500,
-        fontSize: '18px',
+        padding: `${theme.spacing(2)} 0`,
     },
 }));

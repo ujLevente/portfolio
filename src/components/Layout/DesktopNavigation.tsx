@@ -7,10 +7,10 @@ import { NAV_ITEMS } from '../../constants';
 export function DesktopNavigation() {
     return (
         <ContainerBox>
-            {NAV_ITEMS.map((item, i) => (
-                <NavItem key={item}>
+            {NAV_ITEMS.map(({ name }, i) => (
+                <NavItem key={name}>
                     <span style={{ color: '#594bff' }}>{`0${i + 1}. `}</span>
-                    {item}
+                    {name}
                 </NavItem>
             ))}
             <CopyUrlTooltip title="Copy page url">
