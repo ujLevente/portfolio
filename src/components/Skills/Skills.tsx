@@ -82,7 +82,7 @@ const softSkills = [
 
 export function Skills() {
     return (
-        <Section titleOne="title one" titleTwo="Skills">
+        <Section titleOne="title one" titleTwo="Skills" id="skillset">
             <Typography
                 variant="h4"
                 sx={{ fontSize: '20px', mb: 3, color: 'text.secondary' }}

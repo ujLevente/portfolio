@@ -3,12 +3,13 @@ import { Link, styled, Tooltip } from '@mui/material';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import { NAV_ITEMS } from '../../constants';
+import { scrollToSection } from '../../utils';
 
 export function DesktopNavigation() {
     return (
         <ContainerBox>
-            {NAV_ITEMS.map(({ name }, i) => (
-                <NavItem key={name}>
+            {NAV_ITEMS.map(({ name, sectionId }, i) => (
+                <NavItem key={name} onClick={() => scrollToSection(sectionId)}>
                     <span style={{ color: '#594bff' }}>{`0${i + 1}. `}</span>
                     {name}
                 </NavItem>

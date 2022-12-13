@@ -66,7 +66,11 @@ export function Experience() {
     const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
 
     return (
-        <Section titleOne="career path" titleTwo="Work Experices">
+        <Section
+            titleOne="career path"
+            titleTwo="Work Experices"
+            id="experience"
+        >
             <Box
                 sx={{
                     flexGrow: 1,

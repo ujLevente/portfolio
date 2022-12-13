@@ -73,7 +73,7 @@ export function Projects() {
     const showMoreButtonVisible = projectList.length > gridLimit;
 
     return (
-        <Section titleOne="my work" titleTwo="Projects">
+        <Section titleOne="my work" titleTwo="Projects" id="projects">
             <Grid container spacing={3}>
                 {projectsToShow.map(
                     ({ title, link, description, technologies }) => (

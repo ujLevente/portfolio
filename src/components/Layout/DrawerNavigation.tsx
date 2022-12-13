@@ -15,6 +15,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import * as React from 'react';
 import { NAV_ITEMS } from '../../constants';
+import { scrollToSection, SectionType } from '../../utils';
 
 type DrawerNavigationProps = {
     drawerOpen: boolean;
@@ -25,6 +26,12 @@ export function DrawerNavigation({
     drawerOpen,
     handleDrawerToggle,
 }: DrawerNavigationProps) {
+    const handleNavItemTouched = (sectionId: SectionType) => {
+        handleDrawerToggle();
+        // call scrollToSection after drawer close animation finished
+        setTimeout(() => scrollToSection(sectionId));
+    };
+
     return (
         <Box component="nav">
             <StyledDrawer
@@ -44,9 +51,14 @@ export function DrawerNavigation({
                         </IconButton>
                     </Toolbar>
                     <List>
-                        {NAV_ITEMS.map(({ name, Icon }) => (
+                        {NAV_ITEMS.map(({ name, sectionId, Icon }) => (
                             <ListItem key={name} disablePadding>
-                                <ListItemButton sx={{ paddingLeft: 1 }}>
+                                <ListItemButton
+                                    sx={{ paddingLeft: 1 }}
+                                    onClick={() =>
+                                        handleNavItemTouched(sectionId)
+                                    }
+                                >
                                     <ListItemIcon
                                         sx={{ color: 'primary.main' }}
                                     >

@@ -1,4 +1,5 @@
 import { Box, styled, Typography } from '@mui/material';
+import { scrollToSection } from '../../utils';
 import { HeroDescription } from './HeroDescription';
 import { HeroImage } from './HeroImage';
 
@@ -7,7 +8,9 @@ export function Hero() {
         <ContainerBox>
             <HeroDescription />
             <HeroImage />
-            <ScrollDown>Scroll</ScrollDown>
+            <ScrollDown onClick={() => scrollToSection('experience')}>
+                Scroll
+            </ScrollDown>
         </ContainerBox>
     );
 }
