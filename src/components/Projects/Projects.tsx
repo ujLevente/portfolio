@@ -11,8 +11,9 @@ import {
     Chip,
 } from '@mui/material';
 import { useState } from 'react';
+import { Reveal } from 'react-awesome-reveal';
 import { FolderIcon } from '../common/icons/FolderIcon';
-import { Section } from '../common/Section';
+import { customAnimation, Section } from '../common/Section';
 
 const projectList = [
     {
@@ -76,40 +77,48 @@ export function Projects() {
         <Section titleOne="my work" titleTwo="Projects" id="projects">
             <Grid container spacing={3}>
                 {projectsToShow.map(
-                    ({ title, link, description, technologies }) => (
+                    ({ title, link, description, technologies }, i) => (
                         <Grid item xs={12} sm={6} md={4} key={title}>
-                            <ProjectBox>
-                                <ProjectTopBox>
-                                    <FolderIcon />
-                                    <Link href={link} target="_blank">
-                                        <OpenInNewIcon color="inherit" />
-                                    </Link>
-                                </ProjectTopBox>
-                                <ProjectLink
-                                    href={link}
-                                    target="_blank"
-                                    variant="h4"
-                                >
-                                    {title}
-                                </ProjectLink>
-                                <Typography
-                                    variant="body2"
-                                    sx={{ mb: 2, mt: 1 }}
-                                >
-                                    {description}
-                                </Typography>
-                                <Grid container spacing={1}>
-                                    {technologies.map((item) => (
-                                        <Grid item key={item}>
-                                            <Chip
-                                                size="small"
-                                                variant="outlined"
-                                                label={item}
-                                            />
-                                        </Grid>
-                                    ))}
-                                </Grid>
-                            </ProjectBox>
+                            <Reveal
+                                delay={200 * i}
+                                duration={500}
+                                keyframes={customAnimation}
+                                fraction={0}
+                                triggerOnce
+                            >
+                                <ProjectBox>
+                                    <ProjectTopBox>
+                                        <FolderIcon />
+                                        <Link href={link} target="_blank">
+                                            <OpenInNewIcon color="inherit" />
+                                        </Link>
+                                    </ProjectTopBox>
+                                    <ProjectLink
+                                        href={link}
+                                        target="_blank"
+                                        variant="h4"
+                                    >
+                                        {title}
+                                    </ProjectLink>
+                                    <Typography
+                                        variant="body2"
+                                        sx={{ mb: 2, mt: 1 }}
+                                    >
+                                        {description}
+                                    </Typography>
+                                    <Grid container spacing={1}>
+                                        {technologies.map((item) => (
+                                            <Grid item key={item}>
+                                                <Chip
+                                                    size="small"
+                                                    variant="outlined"
+                                                    label={item}
+                                                />
+                                            </Grid>
+                                        ))}
+                                    </Grid>
+                                </ProjectBox>
+                            </Reveal>
                         </Grid>
                     )
                 )}

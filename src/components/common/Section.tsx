@@ -1,5 +1,6 @@
-import { Box, Typography } from '@mui/material';
+import { Box, keyframes, Typography } from '@mui/material';
 import { PropsWithChildren } from 'react';
+import { Reveal } from 'react-awesome-reveal';
 import { SectionType } from '../../utils';
 
 type SectionProps = {
@@ -7,6 +8,18 @@ type SectionProps = {
     titleTwo: string;
     id: SectionType;
 };
+
+export const customAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 export function Section({
     titleOne,
@@ -16,13 +29,15 @@ export function Section({
 }: SectionProps & PropsWithChildren) {
     return (
         <Box component="section" sx={{ py: 8 }} title={id} id={id}>
-            <Typography variant="h3" gutterBottom>
-                - {titleOne}
-            </Typography>
-            <Typography variant="h2" gutterBottom sx={{ mb: 12 }}>
-                {titleTwo}
-            </Typography>
-            {children}
+            <Reveal triggerOnce duration={500} keyframes={customAnimation}>
+                <Typography variant="h3" gutterBottom>
+                    - {titleOne}
+                </Typography>
+                <Typography variant="h2" gutterBottom sx={{ mb: 12 }}>
+                    {titleTwo}
+                </Typography>
+                {children}
+            </Reveal>
         </Box>
     );
 }
