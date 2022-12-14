@@ -1,10 +1,14 @@
 import { TypographyOptions } from '@mui/material/styles/createTypography';
+import { Inter, Plus_Jakarta_Sans } from '@next/font/google';
 import { defaultTheme } from './default-theme';
 
+export const inter = Inter({ subsets: ['latin'] });
+export const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ['latin'] });
+
 export const typography: TypographyOptions = {
-    fontFamily: 'Inter',
+    fontFamily: inter.style.fontFamily,
     h1: {
-        fontFamily: 'Plus Jakarta Sans',
+        fontFamily: plusJakartaSans.style.fontFamily,
         fontWeight: 700,
         fontSize: '44px',
         lineHeight: '55.44px',
@@ -14,7 +18,8 @@ export const typography: TypographyOptions = {
         },
     },
     h2: {
-        fontFamily: 'Plus Jakarta Sans',
+        fontFamily: plusJakartaSans.style.fontFamily,
+
         fontWeight: 700,
         fontSize: '32px',
         lineHeight: '45.36px',
@@ -29,7 +34,8 @@ export const typography: TypographyOptions = {
         color: '#656D72',
     },
     h4: {
-        fontFamily: 'Plus Jakarta Sans',
+        fontFamily: plusJakartaSans.style.fontFamily,
+
         fontWeight: 500,
         fontSize: '18px',
         lineHeight: '23px',

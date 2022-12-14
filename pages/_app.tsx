@@ -3,7 +3,6 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Layout } from '../src/components/Layout';
 import { theme } from '../src/theme';
-import '../src/style/index.css';
 
 export default function App({ Component, pageProps }: AppProps) {
     return (

@@ -1,6 +1,7 @@
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { Box, Link, styled, Typography } from '@mui/material';
 import { format } from 'date-fns';
+import { inter } from '../../theme/typography';
 import { ExperienceType } from './Experience';
 
 export function ExperienceItemHeader(
@@ -50,7 +51,7 @@ const CompanyLink = styled(Link)(({ theme }) => ({
     '& span': {
         // Plus Jakarta Sans font family places @ too much below
         lineHeight: '18px',
-        fontFamily: 'Inter',
+        fontFamily: inter.style.fontFamily,
     },
 }));
 
