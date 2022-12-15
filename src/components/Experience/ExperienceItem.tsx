@@ -1,4 +1,5 @@
 import { Box, Chip, Grid, styled } from '@mui/material';
+import { Fade } from 'react-awesome-reveal';
 import { ExperienceType } from './Experience';
 import { ExperienceItemBottom } from './ExperienceItemBottom';
 import { ExperienceItemHeader } from './ExperienceItemHeader';
@@ -14,22 +15,26 @@ export function ExperienceItem({ item, active }: ExperienceItemProps) {
     return (
         <Box role="tabpanel" hidden={!active} sx={{ flex: 1 }}>
             {active && (
-                <Box sx={{ pl: { md: 5 }, pt: { xs: 5, md: 0 } }}>
-                    <ExperienceItemHeader {...item} />
-                    <Grid container spacing={1}>
-                        {technologies.map((item) => (
-                            <Grid item key={item}>
-                                <Chip
-                                    label={item}
-                                    variant="outlined"
-                                    size="small"
-                                />
-                            </Grid>
-                        ))}
-                    </Grid>
-                    <DividerBox />
-                    <ExperienceItemBottom responsibilities={responsibilities} />
-                </Box>
+                <Fade triggerOnce>
+                    <Box sx={{ pl: { md: 5 }, pt: { xs: 5, md: 0 } }}>
+                        <ExperienceItemHeader {...item} />
+                        <Grid container spacing={1}>
+                            {technologies.map((item) => (
+                                <Grid item key={item}>
+                                    <Chip
+                                        label={item}
+                                        variant="outlined"
+                                        size="small"
+                                    />
+                                </Grid>
+                            ))}
+                        </Grid>
+                        <DividerBox />
+                        <ExperienceItemBottom
+                            responsibilities={responsibilities}
+                        />
+                    </Box>
+                </Fade>
             )}
         </Box>
     );

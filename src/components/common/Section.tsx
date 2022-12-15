@@ -1,7 +1,7 @@
 import { Box, keyframes, Typography } from '@mui/material';
 import { PropsWithChildren } from 'react';
-import { Reveal } from 'react-awesome-reveal';
 import { SectionType } from '../../utils';
+import { RevealWrapper } from './RevealWrapper';
 
 type SectionProps = {
     titleOne: string;
@@ -29,7 +29,7 @@ export function Section({
 }: SectionProps & PropsWithChildren) {
     return (
         <Box component="section" sx={{ py: 8 }} title={id} id={id}>
-            <Reveal triggerOnce duration={500} keyframes={customAnimation}>
+            <RevealWrapper>
                 <Typography variant="h3" gutterBottom>
                     - {titleOne}
                 </Typography>
@@ -37,7 +37,7 @@ export function Section({
                     {titleTwo}
                 </Typography>
                 {children}
-            </Reveal>
+            </RevealWrapper>
         </Box>
     );
 }

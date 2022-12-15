@@ -11,9 +11,9 @@ import {
     Chip,
 } from '@mui/material';
 import { useState } from 'react';
-import { Reveal } from 'react-awesome-reveal';
 import { FolderIcon } from '../common/icons/FolderIcon';
-import { customAnimation, Section } from '../common/Section';
+import { RevealWrapper } from '../common/RevealWrapper';
+import { Section } from '../common/Section';
 
 const projectList = [
     {
@@ -79,13 +79,7 @@ export function Projects() {
                 {projectsToShow.map(
                     ({ title, link, description, technologies }, i) => (
                         <Grid item xs={12} sm={6} md={4} key={title}>
-                            <Reveal
-                                delay={200 * i}
-                                duration={500}
-                                keyframes={customAnimation}
-                                fraction={0}
-                                triggerOnce
-                            >
+                            <RevealWrapper delay={200 * i}>
                                 <ProjectBox>
                                     <ProjectTopBox>
                                         <FolderIcon />
@@ -118,7 +112,7 @@ export function Projects() {
                                         ))}
                                     </Grid>
                                 </ProjectBox>
-                            </Reveal>
+                            </RevealWrapper>
                         </Grid>
                     )
                 )}

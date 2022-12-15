@@ -1,9 +1,6 @@
 import { TypographyOptions } from '@mui/material/styles/createTypography';
-import { Inter, Plus_Jakarta_Sans } from '@next/font/google';
+import { inter, plusJakartaSans } from '../../pages/_app';
 import { defaultTheme } from './default-theme';
-
-export const inter = Inter({ subsets: ['latin'] });
-export const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ['latin'] });
 
 export const typography: TypographyOptions = {
     fontFamily: inter.style.fontFamily,

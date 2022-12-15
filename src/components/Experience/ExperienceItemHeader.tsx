@@ -1,7 +1,7 @@
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { Box, Link, styled, Typography } from '@mui/material';
 import { format } from 'date-fns';
-import { inter } from '../../theme/typography';
+import { inter } from '../../../pages/_app';
 import { ExperienceType } from './Experience';
 
 export function ExperienceItemHeader(
