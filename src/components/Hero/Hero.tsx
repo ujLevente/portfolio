@@ -1,17 +1,20 @@
 import { Box, styled, Typography } from '@mui/material';
 import { scrollToSection } from '../../utils';
+import { RevealWrapper } from '../common/RevealWrapper';
 import { HeroDescription } from './HeroDescription';
 import { HeroImage } from './HeroImage';
 
 export function Hero() {
     return (
-        <ContainerBox>
-            <HeroDescription />
-            <HeroImage />
-            <ScrollDown onClick={() => scrollToSection('experience')}>
-                Scroll
-            </ScrollDown>
-        </ContainerBox>
+        <RevealWrapper>
+            <ContainerBox>
+                <HeroDescription />
+                <HeroImage />
+                <ScrollDown onClick={() => scrollToSection('experience')}>
+                    Scroll
+                </ScrollDown>
+            </ContainerBox>
+        </RevealWrapper>
     );
 }
 

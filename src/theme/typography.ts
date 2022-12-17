@@ -1,11 +1,8 @@
 import { TypographyOptions } from '@mui/material/styles/createTypography';
-import { inter, plusJakartaSans } from '../../pages/_app';
 import { defaultTheme } from './default-theme';
 
 export const typography: TypographyOptions = {
-    fontFamily: inter.style.fontFamily,
     h1: {
-        fontFamily: plusJakartaSans.style.fontFamily,
         fontWeight: 700,
         fontSize: '44px',
         lineHeight: '55.44px',
@@ -15,8 +12,6 @@ export const typography: TypographyOptions = {
         },
     },
     h2: {
-        fontFamily: plusJakartaSans.style.fontFamily,
-
         fontWeight: 700,
         fontSize: '32px',
         lineHeight: '45.36px',
@@ -31,8 +26,6 @@ export const typography: TypographyOptions = {
         color: '#656D72',
     },
     h4: {
-        fontFamily: plusJakartaSans.style.fontFamily,
-
         fontWeight: 500,
         fontSize: '18px',
         lineHeight: '23px',
