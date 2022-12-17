@@ -1,4 +1,4 @@
-export type SectionType = 'experience' | 'projects' | 'skillset';
+export type SectionType = 'experience' | 'projects' | 'skillset' | 'contact';
 
 export function scrollToSection(sectionId: SectionType) {
     const elem = document.getElementById(sectionId);
