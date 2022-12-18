@@ -77,9 +77,18 @@ export const components: Components = {
     MuiTextField: {
         styleOverrides: {
             root: {
+                marginBottom: '3px',
                 '& fieldset': {
                     borderColor: '#f1f1f1d1',
                 },
+            },
+        },
+    },
+    MuiFormHelperText: {
+        styleOverrides: {
+            root: {
+                marginTop: 0,
+                height: 0,
             },
         },
     },

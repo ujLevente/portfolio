@@ -1,8 +1,8 @@
 import { Email } from '@mui/icons-material';
 import { LoadingButton } from '@mui/lab';
-import { Grid, Typography } from '@mui/material';
-import { Field, Form, Formik, FormikHelpers } from 'formik';
-import { TextField } from 'formik-material-ui';
+import { Grid, styled, Typography } from '@mui/material';
+import { Field, FieldAttributes, Form, Formik, FormikHelpers } from 'formik';
+import { TextField, TextFieldProps } from 'formik-material-ui';
 import * as Yup from 'yup';
 import { axiosInstance } from '../../axios';
 
@@ -39,7 +39,7 @@ export function Contact() {
 
     return (
         <Section
-            titleOne="titleOne"
+            titleOne="Contact"
             titleTwo="Lets's work together"
             id="contact"
         >
@@ -48,7 +48,7 @@ export function Contact() {
                     <Formik
                         initialValues={initialValues}
                         onSubmit={handleSubmit}
-                        // validationSchema={validationSchema}
+                        validationSchema={validationSchema}
                     >
                         {({ isSubmitting }) => (
                             <Form>
@@ -58,33 +58,12 @@ export function Contact() {
                                 >
                                     Get in touch
                                 </Typography>
-                                <Field
-                                    name="name"
-                                    label="Your name"
-                                    component={TextField}
-                                    required
-                                    fullWidth
-                                    variant="outlined"
-                                    sx={{ mb: 4 }}
-                                />
-                                <Field
-                                    label="Your email"
-                                    name="email"
-                                    component={TextField}
-                                    variant="outlined"
-                                    required
-                                    fullWidth
-                                    sx={{ mb: 4 }}
-                                />
-                                <Field
+                                <MuiField name="name" label="Your name" />
+                                <MuiField label="Your email" name="email" />
+                                <MuiField
                                     label="Message"
                                     name="message"
                                     multiline
-                                    component={TextField}
-                                    variant="outlined"
-                                    required
-                                    sx={{ mb: 4 }}
-                                    fullWidth
                                 />
                                 <LoadingButton
                                     loading={isSubmitting}
@@ -93,15 +72,33 @@ export function Contact() {
                                     variant="contained"
                                     size="small"
                                     startIcon={<Email />}
+                                    color="secondary"
                                     // disabled={!values.note}
                                 >
-                                    Üzenet küldése
+                                    Submit
                                 </LoadingButton>
                             </Form>
                         )}
                     </Formik>
                 </Grid>
+                <Grid item xs={12} md={6}></Grid>
             </Grid>
         </Section>
     );
 }
+
+const MuiField = styled((props: TextFieldProps & FieldAttributes<any>) => (
+    <Field
+        component={TextField}
+        fullWidth
+        variant="outlined"
+        autoComplete="disable"
+        {...props}
+    />
+))(({ theme }) => ({
+    marginBottom: theme.spacing(5),
+    '& .MuiInputBase-root': {
+        // for the error text
+        marginBottom: theme.spacing(0.5),
+    },
+}));
