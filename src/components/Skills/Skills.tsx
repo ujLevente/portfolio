@@ -85,7 +85,7 @@ export function Skills() {
         <Section titleOne="title one" titleTwo="Skills" id="skillset">
             <Typography
                 variant="h4"
-                sx={{ fontSize: '20px', mb: 3, color: 'text.secondary' }}
+                sx={{ fontSize: '20px', mb: 3, color: 'text.primary' }}
             >
                 Hard skills
             </Typography>
@@ -111,7 +111,7 @@ export function Skills() {
                     fontSize: '20px',
                     mt: 6,
                     mb: 3,
-                    color: 'text.secondary',
+                    color: 'text.primary',
                 }}
             >
                 Soft skills

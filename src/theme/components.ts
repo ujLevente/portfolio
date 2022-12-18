@@ -27,7 +27,7 @@ export const components: Components = {
                 },
 
                 '&.uncolored': {
-                    color: defaultTheme.palette.text.primary,
+                    color: defaultTheme.palette.text.secondary,
                     transition: 'opacity 0.3s',
                     '&:hover': {
                         opacity: 0.5,
@@ -70,6 +70,15 @@ export const components: Components = {
                     padding: `${defaultTheme.spacing(1)} ${defaultTheme.spacing(
                         2
                     )}`,
+                },
+            },
+        },
+    },
+    MuiTextField: {
+        styleOverrides: {
+            root: {
+                '& fieldset': {
+                    borderColor: '#f1f1f1d1',
                 },
             },
         },

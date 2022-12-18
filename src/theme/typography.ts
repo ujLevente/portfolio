@@ -6,7 +6,7 @@ export const typography: TypographyOptions = {
         fontWeight: 700,
         fontSize: '44px',
         lineHeight: '55.44px',
-        color: defaultTheme.palette.text.secondary,
+        color: defaultTheme.palette.text.primary,
         [defaultTheme.breakpoints.down('sm')]: {
             fontSize: '32px',
         },
@@ -15,7 +15,7 @@ export const typography: TypographyOptions = {
         fontWeight: 700,
         fontSize: '32px',
         lineHeight: '45.36px',
-        color: defaultTheme.palette.text.secondary,
+        color: defaultTheme.palette.text.primary,
     },
     h3: {
         fontWeight: 500,

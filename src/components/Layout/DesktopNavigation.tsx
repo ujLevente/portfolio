@@ -21,7 +21,7 @@ export function DesktopNavigation() {
                     }
                     color="primary"
                 >
-                    <LinkIcon sx={{ color: 'text.secondary' }} />
+                    <LinkIcon sx={{ color: 'text.primary' }} />
                 </IconButton>
             </CopyUrlTooltip>
         </ContainerBox>

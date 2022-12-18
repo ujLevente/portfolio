@@ -32,7 +32,7 @@ const ScrollDown = styled(Typography)(({ theme }) => ({
     transform: 'translate(-50%, 0)',
     left: '50%',
     position: 'absolute',
-    color: 'white',
+    color: theme.palette.text.primary,
     padding: `${theme.spacing(5)} 20px 0 20px`,
     bottom: theme.spacing(2),
     '&:hover': {
@@ -45,8 +45,8 @@ const ScrollDown = styled(Typography)(({ theme }) => ({
         top: 0,
         content: '""',
         position: 'absolute',
-        borderLeft: '2px solid white',
-        borderBottom: '2px solid white',
+        borderLeft: `2px solid ${theme.palette.text.primary}`,
+        borderBottom: `2px solid ${theme.palette.text.primary}`,
         height: '24px',
         width: '24px',
         // 2px = border width
