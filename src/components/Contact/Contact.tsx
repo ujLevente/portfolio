@@ -1,7 +1,7 @@
 import { Email } from '@mui/icons-material';
 import { LoadingButton } from '@mui/lab';
 import { Grid, styled, Typography } from '@mui/material';
-import { Field, FieldAttributes, Form, Formik, FormikHelpers } from 'formik';
+import { Field, FieldAttributes, Form, Formik } from 'formik';
 import { TextField, TextFieldProps } from 'formik-material-ui';
 import * as Yup from 'yup';
 import { axiosInstance } from '../../axios';
@@ -29,12 +29,8 @@ const validationSchema = Yup.object().shape({
 });
 
 export function Contact() {
-    const handleSubmit = async (
-        values: InitialValuesType,
-        formikHelpers: FormikHelpers<InitialValuesType>
-    ) => {
+    const handleSubmit = async (values: InitialValuesType) => {
         const { data } = await axiosInstance.post('/api/contact', values);
-        formikHelpers.setSubmitting(false);
     };
 
     return (
@@ -64,6 +60,7 @@ export function Contact() {
                                     label="Message"
                                     name="message"
                                     multiline
+                                    rows={4}
                                 />
                                 <LoadingButton
                                     loading={isSubmitting}
@@ -90,7 +87,7 @@ const MuiField = styled((props: TextFieldProps & FieldAttributes<any>) => (
         component={TextField}
         fullWidth
         variant="outlined"
-        autoComplete="off"
+        autoComplete="new-password"
         {...props}
     />
 ))(({ theme }) => ({

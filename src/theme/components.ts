@@ -79,7 +79,33 @@ export const components: Components = {
             root: {
                 marginBottom: '3px',
                 '& fieldset': {
-                    borderColor: '#f1f1f1d1',
+                    borderColor: defaultTheme.palette.text.secondary,
+                },
+                '& textarea.Mui-disabled, input.Mui-disabled': {
+                    color: defaultTheme.palette.text.secondary,
+                    '-webkit-text-fill-color': 'unset',
+                },
+                '& .MuiInputBase-root.Mui-disabled fieldset': {
+                    borderColor: defaultTheme.palette.text.secondary,
+                },
+            },
+        },
+    },
+    MuiFormLabel: {
+        styleOverrides: {
+            root: {
+                color: defaultTheme.palette.text.secondary,
+                '&:hover': {
+                    color: 'blue',
+                },
+                '&.Mui-disabled': {
+                    color: defaultTheme.palette.text.secondary,
+                },
+                '&.Mui-focused': {
+                    color: defaultTheme.palette.text.primary,
+                },
+                '&.Mui-error': {
+                    color: defaultTheme.palette.error.main,
                 },
             },
         },
@@ -89,6 +115,23 @@ export const components: Components = {
             root: {
                 marginTop: 0,
                 height: 0,
+            },
+        },
+    },
+    MuiButtonBase: {
+        styleOverrides: {
+            root: {
+                '&.MuiButton-containedSecondary': {
+                    '&.Mui-disabled': {
+                        background: '#3b339a',
+                    },
+                    '&:hover': {
+                        background: '#7e74f1ab',
+                    },
+                    '& .MuiCircularProgress-root': {
+                        color: defaultTheme.palette.text.primary,
+                    },
+                },
             },
         },
     },

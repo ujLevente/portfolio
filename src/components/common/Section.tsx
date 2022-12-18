@@ -28,7 +28,7 @@ export function Section({
     children,
 }: SectionProps & PropsWithChildren) {
     return (
-        <Box component="section" sx={{ py: 8 }} title={id} id={id}>
+        <Box component="section" sx={{ py: 8 }} id={id}>
             <RevealWrapper>
                 <Typography variant="h3" gutterBottom>
                     - {titleOne}
