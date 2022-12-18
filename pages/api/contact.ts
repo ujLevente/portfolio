@@ -2,13 +2,14 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import nodemailer from 'nodemailer';
 
 type Data = {
-    name: string;
+    status: string;
 };
 
 export default function handler(
     req: NextApiRequest,
     res: NextApiResponse<Data>
 ) {
+    const { name, message, email } = req.body;
     const transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
         port: 465,
@@ -20,19 +21,18 @@ export default function handler(
     });
 
     const mailOptions = {
-        from: process.env['SMTP_EMAIL_USER_NAME'],
         to: 'levente.uj.development@gmail.com',
-        subject: 'Hello from Next.js and TypeScript',
-        text: 'This is a test email sent from Next.js and TypeScript',
+        subject: `Message from ${email}, name: ${name}`,
+        text: message,
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             console.error(error);
+            res.status(502).json({ status: 'failure' });
         } else {
             console.log(`Email sent: ${info.response}`);
+            res.status(200).json({ status: 'success' });
         }
     });
-
-    res.status(200).json({ name: 'John Doe' });
 }
