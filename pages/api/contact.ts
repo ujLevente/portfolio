@@ -9,7 +9,7 @@ export default function handler(
     req: NextApiRequest,
     res: NextApiResponse<Data>
 ) {
-    const { name, message, email } = req.body;
+    const { name, message, replyTo } = req.body;
     const transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
         port: 465,
@@ -22,7 +22,7 @@ export default function handler(
 
     const mailOptions = {
         to: 'levente.uj.development@gmail.com',
-        subject: `Message from ${email}, name: ${name}`,
+        subject: `Message from ${replyTo}, name: ${name}`,
         text: message,
     };
 

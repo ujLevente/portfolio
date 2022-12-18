@@ -10,19 +10,19 @@ import { Section } from '../common/Section';
 
 type InitialValuesType = {
     name: string;
-    email: string;
+    replyTo: string;
     message: string;
 };
 
 const initialValues: InitialValuesType = {
     name: '',
-    email: '',
+    replyTo: '',
     message: '',
 };
 
 const validationSchema = Yup.object().shape({
     name: Yup.string().required('This field is required'),
-    email: Yup.string()
+    replyTo: Yup.string()
         .email('Invalid email')
         .required('This field is required'),
     message: Yup.string().required('This field is required'),
@@ -59,7 +59,7 @@ export function Contact() {
                                     Get in touch
                                 </Typography>
                                 <MuiField name="name" label="Your name" />
-                                <MuiField label="Your email" name="email" />
+                                <MuiField label="Your email" name="replyTo" />
                                 <MuiField
                                     label="Message"
                                     name="message"
@@ -70,12 +70,10 @@ export function Contact() {
                                     type="submit"
                                     sx={{ alignSelf: 'flex-end' }}
                                     variant="contained"
-                                    size="small"
                                     startIcon={<Email />}
                                     color="secondary"
-                                    // disabled={!values.note}
                                 >
-                                    Submit
+                                    Send message
                                 </LoadingButton>
                             </Form>
                         )}
@@ -92,11 +90,11 @@ const MuiField = styled((props: TextFieldProps & FieldAttributes<any>) => (
         component={TextField}
         fullWidth
         variant="outlined"
-        autoComplete="disable"
+        autoComplete="off"
         {...props}
     />
 ))(({ theme }) => ({
-    marginBottom: theme.spacing(5),
+    marginBottom: theme.spacing(4),
     '& .MuiInputBase-root': {
         // for the error text
         marginBottom: theme.spacing(0.5),
