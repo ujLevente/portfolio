@@ -1,5 +1,6 @@
-import { LinkedIn, GitHub, Group } from '@mui/icons-material';
+import { LinkedIn, GitHub } from '@mui/icons-material';
 import { Box, Link } from '@mui/material';
+import { UpworkIcon } from '../common/icons/UpworkIcon';
 
 const socialLinks = [
     {
@@ -12,13 +13,20 @@ const socialLinks = [
     },
     {
         href: 'https://www.upwork.com/',
-        Icon: Group,
+        Icon: UpworkIcon,
     },
 ];
 
 export function Social() {
     return (
-        <Box sx={{ position: 'relative', left: '-10px' }}>
+        <Box
+            sx={{
+                position: 'relative',
+                left: '-10px',
+                display: 'flex',
+                alignItems: 'center',
+            }}
+        >
             {socialLinks.map(({ Icon, href }) => (
                 <Link
                     href={href}
