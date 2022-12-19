@@ -35,15 +35,18 @@ export const typography: TypographyOptions = {
         fontWeight: 400,
         fontSize: '16px',
         lineHeight: '32px',
+        color: defaultTheme.palette.text.secondary,
     },
     body2: {
         fontWeight: 400,
         fontSize: '14px',
         lineHeight: '27px',
+        color: defaultTheme.palette.text.secondary,
     },
     button: {
         fontWeight: 500,
         fontSize: '16px',
         lineHeight: '32px',
+        color: defaultTheme.palette.text.secondary,
     },
 };
