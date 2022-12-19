@@ -7,6 +7,7 @@ import * as Yup from 'yup';
 import { axiosInstance } from '../../axios';
 
 import { Section } from '../common/Section';
+import { Social } from '../Hero/Social';
 
 type InitialValuesType = {
     name: string;
@@ -40,7 +41,28 @@ export function Contact() {
             id="contact"
         >
             <Grid container>
-                <Grid item xs={12} md={6}>
+                <Grid item xs={12} md={7} sx={{ pr: 4 }}>
+                    <Typography variant="h4" sx={{ mb: 6, fontSize: '22px' }}>
+                        Get in touch
+                    </Typography>
+                    <Typography
+                        variant="body1"
+                        sx={{ mb: 6, fontSize: '18px' }}
+                    >
+                        I&apos;m always happy to hear about exciting
+                        opportunities, and build valuable connections.
+                        Let&apos;s connect! You can send an e-mail or fill out
+                        the form.
+                    </Typography>
+                    <Typography
+                        variant="body1"
+                        sx={{ mb: 6, fontSize: '20px', color: '#f1f1f1' }}
+                    >
+                        Contact me via email
+                    </Typography>
+                    <Social />
+                </Grid>
+                <Grid item xs={12} md={5}>
                     <Formik
                         initialValues={initialValues}
                         onSubmit={handleSubmit}
@@ -48,12 +70,12 @@ export function Contact() {
                     >
                         {({ isSubmitting }) => (
                             <Form>
-                                <Typography
+                                {/* <Typography
                                     variant="h4"
                                     sx={{ mb: 6, fontSize: '22px' }}
                                 >
                                     Get in touch
-                                </Typography>
+                                </Typography> */}
                                 <MuiField name="name" label="Your name" />
                                 <MuiField label="Your email" name="replyTo" />
                                 <MuiField
@@ -76,7 +98,6 @@ export function Contact() {
                         )}
                     </Formik>
                 </Grid>
-                <Grid item xs={12} md={6}></Grid>
             </Grid>
         </Section>
     );
