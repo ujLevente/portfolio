@@ -12,7 +12,7 @@ const socialLinks = [
         Icon: GitHub,
     },
     {
-        href: 'https://www.upwork.com/',
+        href: 'https://www.upwork.com/freelancers/~01216b40a0ad9d5874',
         Icon: UpworkIcon,
     },
 ];
