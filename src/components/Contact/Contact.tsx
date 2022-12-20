@@ -8,6 +8,7 @@ import { axiosInstance } from '../../axios';
 
 import { Section } from '../common/Section';
 import { Social } from '../Hero/Social';
+import { CopyEmailField } from './CopyEmailField';
 
 type InitialValuesType = {
     name: string;
@@ -60,6 +61,8 @@ export function Contact() {
                     >
                         Contact me via email
                     </Typography>
+
+                    <CopyEmailField />
                     <Social />
                 </Grid>
                 <Grid item xs={12} md={5}>
@@ -70,12 +73,6 @@ export function Contact() {
                     >
                         {({ isSubmitting }) => (
                             <Form>
-                                {/* <Typography
-                                    variant="h4"
-                                    sx={{ mb: 6, fontSize: '22px' }}
-                                >
-                                    Get in touch
-                                </Typography> */}
                                 <MuiField name="name" label="Your name" />
                                 <MuiField label="Your email" name="replyTo" />
                                 <MuiField
