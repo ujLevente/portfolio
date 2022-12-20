@@ -6,12 +6,11 @@ export function HeroImage() {
         <ContainerBox>
             <ImageContainerBox>
                 <Image
-                    src="/profil.png"
-                    // src="/IMG_8040.jpg"
-                    objectFit="contain"
+                    src="/profilSmallRes.png"
+                    fill
                     alt="profil"
-                    layout="fill"
                     style={{
+                        objectFit: 'contain',
                         left: '-12px',
                         top: '0px',
                         transform: 'scale(1.3)',
@@ -51,8 +50,6 @@ const ImageContainerBox = styled(ImageBase)(({ theme }) => ({
     overflow: 'hidden',
     zIndex: 10,
     backgroundImage: 'linear-gradient(-45deg, #e4eeffe3, #483ae3f0)',
-    // backgroundImage: 'linear-gradient(-45deg, #e4eeff, #483ae3)',
-    // border: '2px solid #9389ff',
     [theme.breakpoints.up('sm')]: {
         '&:hover + .image-figure': {
             transform: 'rotate(-14deg)',
