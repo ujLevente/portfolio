@@ -6,7 +6,7 @@ export const typography: TypographyOptions = {
         fontWeight: 700,
         fontSize: '44px',
         lineHeight: '55.44px',
-        color: defaultTheme.palette.text.secondary,
+        color: defaultTheme.palette.text.primary,
         [defaultTheme.breakpoints.down('sm')]: {
             fontSize: '32px',
         },
@@ -15,7 +15,7 @@ export const typography: TypographyOptions = {
         fontWeight: 700,
         fontSize: '32px',
         lineHeight: '45.36px',
-        color: defaultTheme.palette.text.secondary,
+        color: defaultTheme.palette.text.primary,
     },
     h3: {
         fontWeight: 500,
@@ -35,15 +35,18 @@ export const typography: TypographyOptions = {
         fontWeight: 400,
         fontSize: '16px',
         lineHeight: '32px',
+        color: defaultTheme.palette.text.secondary,
     },
     body2: {
         fontWeight: 400,
         fontSize: '14px',
         lineHeight: '27px',
+        color: defaultTheme.palette.text.secondary,
     },
     button: {
         fontWeight: 500,
         fontSize: '16px',
         lineHeight: '32px',
+        color: defaultTheme.palette.text.secondary,
     },
 };

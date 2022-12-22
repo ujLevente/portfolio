@@ -13,8 +13,8 @@ export const palette: PaletteOptions = {
         light: '#594bff',
     },
     text: {
-        primary: '#f1f1f1b3',
-        secondary: '#F1F1F1',
+        primary: '#F1F1F1',
+        secondary: '#f1f1f1b3',
     },
     divider: '#8a80ff87',
 };

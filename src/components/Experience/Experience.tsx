@@ -124,7 +124,7 @@ const ExperienceTabs = styled(Tabs)(({ theme }) => ({
 
 const ExperienceTab = styled(Tab)(({ theme }) => ({
     textTransform: 'initial',
-    color: theme.palette.text.primary,
+    color: theme.palette.text.secondary,
     minWidth: '180px',
     transition: 'all 0.25s',
     borderRight: `2px solid #b5afff36`,

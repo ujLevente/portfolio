@@ -27,7 +27,7 @@ export const components: Components = {
                 },
 
                 '&.uncolored': {
-                    color: defaultTheme.palette.text.primary,
+                    color: defaultTheme.palette.text.secondary,
                     transition: 'opacity 0.3s',
                     '&:hover': {
                         opacity: 0.5,
@@ -70,6 +70,67 @@ export const components: Components = {
                     padding: `${defaultTheme.spacing(1)} ${defaultTheme.spacing(
                         2
                     )}`,
+                },
+            },
+        },
+    },
+    MuiTextField: {
+        styleOverrides: {
+            root: {
+                marginBottom: '3px',
+                '& fieldset': {
+                    borderColor: defaultTheme.palette.text.secondary,
+                },
+                '& textarea.Mui-disabled, input.Mui-disabled': {
+                    color: defaultTheme.palette.text.secondary,
+                    '-webkit-text-fill-color': 'unset',
+                },
+                '& .MuiInputBase-root.Mui-disabled fieldset': {
+                    borderColor: defaultTheme.palette.text.secondary,
+                },
+            },
+        },
+    },
+    MuiFormLabel: {
+        styleOverrides: {
+            root: {
+                color: defaultTheme.palette.text.secondary,
+                '&:hover': {
+                    color: 'blue',
+                },
+                '&.Mui-disabled': {
+                    color: defaultTheme.palette.text.secondary,
+                },
+                '&.Mui-focused': {
+                    color: defaultTheme.palette.text.primary,
+                },
+                '&.Mui-error': {
+                    color: defaultTheme.palette.error.main,
+                },
+            },
+        },
+    },
+    MuiFormHelperText: {
+        styleOverrides: {
+            root: {
+                marginTop: 0,
+                height: 0,
+            },
+        },
+    },
+    MuiButtonBase: {
+        styleOverrides: {
+            root: {
+                '&.MuiButton-containedSecondary': {
+                    '&.Mui-disabled': {
+                        background: '#3b339a',
+                    },
+                    '&:hover': {
+                        background: '#7e74f1ab',
+                    },
+                    '& .MuiCircularProgress-root': {
+                        color: defaultTheme.palette.text.primary,
+                    },
                 },
             },
         },

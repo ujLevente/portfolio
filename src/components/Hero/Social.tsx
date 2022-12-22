@@ -1,24 +1,22 @@
-import { LinkedIn, GitHub, Group } from '@mui/icons-material';
 import { Box, Link } from '@mui/material';
 
-const socialLinks = [
-    {
-        href: 'https://www.linkedin.com/in/%C3%BAj-levente/',
-        Icon: LinkedIn,
-    },
-    {
-        href: 'https://www.linkedin.com/in/%C3%BAj-levente/',
-        Icon: GitHub,
-    },
-    {
-        href: 'https://www.upwork.com/',
-        Icon: Group,
-    },
-];
+type SocialProps = {
+    socialLinks: {
+        href: string;
+        Icon: React.ElementType;
+    }[];
+};
 
-export function Social() {
+export function Social({ socialLinks }: SocialProps) {
     return (
-        <Box sx={{ position: 'relative', left: '-10px' }}>
+        <Box
+            sx={{
+                position: 'relative',
+                left: '-10px',
+                display: 'flex',
+                alignItems: 'center',
+            }}
+        >
             {socialLinks.map(({ Icon, href }) => (
                 <Link
                     href={href}
