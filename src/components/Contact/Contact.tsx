@@ -1,4 +1,4 @@
-import { Email } from '@mui/icons-material';
+import { Email, PanToolAlt } from '@mui/icons-material';
 import { LoadingButton } from '@mui/lab';
 import { Grid, styled, Typography } from '@mui/material';
 import { Field, FieldAttributes, Form, Formik } from 'formik';
@@ -6,7 +6,6 @@ import { TextField, TextFieldProps } from 'formik-material-ui';
 import * as Yup from 'yup';
 import { axiosInstance } from '../../axios';
 import { socialLinksContact } from '../../constants';
-
 import { Section } from '../common/Section';
 import { Social } from '../Hero/Social';
 import { CopyEmailField } from './CopyEmailField';
@@ -49,8 +48,24 @@ export function Contact() {
                     md={7}
                     sx={{ pr: { xs: 0, md: 5 }, mb: { xs: 6, md: 0 } }}
                 >
-                    <Typography variant="h4" sx={{ mb: 6, fontSize: '24px' }}>
+                    <Typography
+                        variant="h4"
+                        sx={{
+                            mb: 5,
+                            fontSize: '24px',
+                            display: 'flex',
+                            alignItems: 'start',
+                        }}
+                    >
                         Get in touch
+                        <PanToolAlt
+                            sx={{
+                                color: '#b5afff',
+                                ml: '6px',
+                                fontSize: '32px',
+                                transform: 'rotateY(180deg) rotate(180deg)',
+                            }}
+                        />
                     </Typography>
                     <Typography
                         variant="body1"
@@ -72,7 +87,7 @@ export function Contact() {
                         variant="body1"
                         sx={{
                             mb: 1,
-                            mt: 3,
+                            mt: 4,
                             fontSize: '20px',
                             color: '#f1f1f1',
                         }}
