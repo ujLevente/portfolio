@@ -1,23 +1,13 @@
-import { LinkedIn, GitHub } from '@mui/icons-material';
 import { Box, Link } from '@mui/material';
-import { UpworkIcon } from '../common/icons/UpworkIcon';
 
-const socialLinks = [
-    {
-        href: 'https://www.linkedin.com/in/%C3%BAj-levente/',
-        Icon: LinkedIn,
-    },
-    {
-        href: 'https://www.linkedin.com/in/%C3%BAj-levente/',
-        Icon: GitHub,
-    },
-    {
-        href: 'https://www.upwork.com/freelancers/~01216b40a0ad9d5874',
-        Icon: UpworkIcon,
-    },
-];
+type SocialProps = {
+    socialLinks: {
+        href: string;
+        Icon: React.ElementType;
+    }[];
+};
 
-export function Social() {
+export function Social({ socialLinks }: SocialProps) {
     return (
         <Box
             sx={{

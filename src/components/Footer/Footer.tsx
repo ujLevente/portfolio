@@ -5,7 +5,7 @@ export function Footer() {
     return (
         <Box
             sx={{
-                pt: 6,
+                pt: { xs: 8, md: 20 },
                 pb: 3,
             }}
         >

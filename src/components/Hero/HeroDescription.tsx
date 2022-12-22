@@ -1,4 +1,5 @@
 import { Box, styled, Typography } from '@mui/material';
+import { socialLinksHero } from '../../constants';
 import { Social } from './Social';
 
 export function HeroDescription() {
@@ -27,11 +28,11 @@ export function HeroDescription() {
                     lineHeight: { xs: '27px', md: '32px' },
                 }}
             >
-                Creative front-end developer with more than +2 years of
-                experience in enterprise companies and startups. Proficient in
-                Html, Tailwind Css, Javascript and React. Passionate about UI/UX
+                Creative front-end developer with close to 4 years of experience
+                in enterprise companies and startups. Proficient in Html,
+                Tailwind Css, Javascript and React. Passionate about UI/UX
             </Typography>
-            <Social />
+            <Social socialLinks={socialLinksHero} />
         </ContainerBox>
     );
 }

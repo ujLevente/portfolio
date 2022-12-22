@@ -5,6 +5,7 @@ import { Field, FieldAttributes, Form, Formik } from 'formik';
 import { TextField, TextFieldProps } from 'formik-material-ui';
 import * as Yup from 'yup';
 import { axiosInstance } from '../../axios';
+import { socialLinksContact } from '../../constants';
 
 import { Section } from '../common/Section';
 import { Social } from '../Hero/Social';
@@ -42,13 +43,18 @@ export function Contact() {
             id="contact"
         >
             <Grid container>
-                <Grid item xs={12} md={7} sx={{ pr: 4 }}>
-                    <Typography variant="h4" sx={{ mb: 6, fontSize: '22px' }}>
+                <Grid
+                    item
+                    xs={12}
+                    md={7}
+                    sx={{ pr: { xs: 0, md: 5 }, mb: { xs: 6, md: 0 } }}
+                >
+                    <Typography variant="h4" sx={{ mb: 6, fontSize: '24px' }}>
                         Get in touch
                     </Typography>
                     <Typography
                         variant="body1"
-                        sx={{ mb: 6, fontSize: '18px' }}
+                        sx={{ mb: 4, fontSize: '18px' }}
                     >
                         I&apos;m always happy to hear about exciting
                         opportunities, and build valuable connections.
@@ -57,13 +63,23 @@ export function Contact() {
                     </Typography>
                     <Typography
                         variant="body1"
-                        sx={{ mb: 6, fontSize: '20px', color: '#f1f1f1' }}
+                        sx={{ mb: 2, fontSize: '20px', color: '#f1f1f1' }}
                     >
                         Contact me via email
                     </Typography>
-
                     <CopyEmailField />
-                    <Social />
+                    <Typography
+                        variant="body1"
+                        sx={{
+                            mb: 1,
+                            mt: 3,
+                            fontSize: '20px',
+                            color: '#f1f1f1',
+                        }}
+                    >
+                        Check out my socials
+                    </Typography>
+                    <Social socialLinks={socialLinksContact} />
                 </Grid>
                 <Grid item xs={12} md={5}>
                     <Formik
@@ -84,7 +100,10 @@ export function Contact() {
                                 <LoadingButton
                                     loading={isSubmitting}
                                     type="submit"
-                                    sx={{ alignSelf: 'flex-end' }}
+                                    sx={{
+                                        alignSelf: 'flex-end',
+                                        width: { xs: '100%', sm: 'initial' },
+                                    }}
                                     variant="contained"
                                     startIcon={<Email />}
                                     color="secondary"
