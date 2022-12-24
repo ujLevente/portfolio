@@ -135,4 +135,13 @@ export const components: Components = {
             },
         },
     },
+    MuiDialog: {
+        styleOverrides: {
+            paper: {
+                backgroundColor: defaultTheme.palette.background.default,
+                borderRadius: '16px',
+                padding: defaultTheme.spacing(3),
+            },
+        },
+    },
 };

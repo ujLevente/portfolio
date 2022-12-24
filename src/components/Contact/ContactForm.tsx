@@ -1,7 +1,7 @@
 import { Email } from '@mui/icons-material';
 import { LoadingButton } from '@mui/lab';
 import { styled } from '@mui/material';
-import { Field, FieldAttributes, Form, Formik } from 'formik';
+import { Field, FieldAttributes, Form, Formik, FormikHelpers } from 'formik';
 import { TextField, TextFieldProps } from 'formik-material-ui';
 import { useState } from 'react';
 import * as Yup from 'yup';
@@ -30,9 +30,20 @@ const validationSchema = Yup.object().shape({
 
 export function ContactForm() {
     const [dialogOpen, setDialogOpen] = useState(false);
+    const [isRequestFailed, setIsRequestFailed] = useState(false);
 
-    const handleSubmit = async (values: InitialValuesType) => {
-        const { data } = await axiosInstance.post('/api/contact', values);
+    const handleSubmit = async (
+        values: InitialValuesType,
+        formikHelpers: FormikHelpers<InitialValuesType>
+    ) => {
+        try {
+            await axiosInstance.post('/api/contact', values);
+            formikHelpers.resetForm();
+            setIsRequestFailed(false);
+        } catch (error) {
+            console.error(error);
+            setIsRequestFailed(true);
+        }
         setDialogOpen(true);
     };
 
@@ -40,6 +51,7 @@ export function ContactForm() {
         <>
             <ContactFormFeedbackDialog
                 open={dialogOpen}
+                error={isRequestFailed}
                 onClose={() => setDialogOpen(false)}
             />
             <Formik
