@@ -1,6 +1,6 @@
 import CheckIcon from '@mui/icons-material/Check';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
-import { Button, Tooltip } from '@mui/material';
+import { Box, Button, Tooltip } from '@mui/material';
 import { useRef, useState } from 'react';
 
 const EMAIL = 'levente.uj.development@gmail.com';
@@ -30,7 +30,17 @@ export function CopyEmailField() {
                     },
                 }}
             >
-                {EMAIL}
+                <Box
+                    component="span"
+                    sx={{
+                        fontSize: {
+                            xs: '12px',
+                            sm: 'inherit',
+                        },
+                    }}
+                >
+                    {EMAIL}
+                </Box>
             </Button>
         </Tooltip>
     );
