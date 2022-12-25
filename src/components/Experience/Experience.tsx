@@ -6,9 +6,8 @@ import { ExperienceItem } from './ExperienceItem';
 
 export type ExperienceType = {
     role: string;
-    startDate: Date;
-    endDate: undefined | Date;
-    workedAs: string;
+    startDate: string;
+    endDate: undefined | string;
     name: string;
     location: string;
     technologies: string[];
@@ -20,9 +19,8 @@ export type ExperienceType = {
 const experienceList: ExperienceType[] = [
     {
         role: 'Full stack developer',
-        startDate: new Date(2016, 9 - 1),
+        startDate: '2021-06',
         endDate: undefined,
-        workedAs: 'Full-time (in self-employed status)',
         name: 'ViddL',
         location: 'Budapest, Hungary',
         technologies: [
@@ -34,32 +32,37 @@ const experienceList: ExperienceType[] = [
             'Mongo',
         ],
         responsibilities: [
-            'Improving overall website performance for mobile users. Improving overall website performance for mobile users. formance for mobile users. ',
-            'Collaborate with back-end developers and web designers to improve usability',
-            'Add voice search feature for mobile app.',
-            'Add voice search feature for mobile app.',
+            "Write modern, performant, maintainable code for the company's parcel delivery ecosystem",
+            'Developing the courier mobile application',
+            'Working on external projects',
         ],
-        url: 'https://webtown.hu/?gclid=Cj0KCQiAnNacBhDvARIsABnDa6_LAXwyWKr78YSulBrj56udJN-qomB0zFwSfoG5P6dVkCVSEpFecHoaAr5fEALw_wcB',
+        url: 'https://viddl.hu/',
         company: 'Cargo-Viszed Kft.',
     },
     {
         role: 'Full stack developer',
-        startDate: new Date(2016, 9 - 1),
-        endDate: new Date(2016, 9 - 1),
-        workedAs: 'Full-time',
+        startDate: '2019-05',
+        endDate: '2021-06',
         name: 'Webtown',
         location: 'Budapest, Hungary',
-        technologies: ['Java', 'Spring', 'JPA', 'Java EE', 'Postgres SQL'],
-        responsibilities: [
-            'Improving overall website performance for mobile users.',
-            'Collaborate with back-end developers and web designers to improve usability',
-            'Add voice search feature for mobile app.',
-            'Add voice search feature for mobile app.',
+        technologies: [
+            'Java',
+            'JavaScript',
+            'Spring',
+            'JPA',
+            'Java EE',
+            'Postgres SQL',
         ],
-        url: 'https://webtown.hu/?gclid=Cj0KCQiAnNacBhDvARIsABnDa6_LAXwyWKr78YSulBrj56udJN-qomB0zFwSfoG5P6dVkCVSEpFecHoaAr5fEALw_wcB',
+        responsibilities: [
+            'Developing Liferay components for enterprise company intranets',
+            'Working on internal backend APIs',
+            'Communicating with external and internal project owners',
+        ],
+        url: 'https://webtown.hu/',
         company: 'Webtown-Informatika kft.',
     },
 ];
+
 export function Experience() {
     const [value, setValue] = useState(0);
     const theme = useTheme();

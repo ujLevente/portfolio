@@ -15,9 +15,7 @@ export function ExperienceItemHeader(
     const createTimeInterval = () => {
         let result = `${format(new Date(startDate), 'MMMM yyyy')} - `;
 
-        result += endDate
-            ? format(new Date(startDate), 'MMMM yyyy')
-            : 'Present';
+        result += endDate ? format(new Date(endDate), 'MMMM yyyy') : 'Present';
 
         return result;
     };
