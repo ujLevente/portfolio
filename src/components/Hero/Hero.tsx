@@ -6,17 +6,15 @@ import { HeroImage } from './HeroImage';
 
 export function Hero() {
     return (
-        <Box>
-            <RevealWrapper>
-                <ContainerBox>
-                    <HeroDescription />
-                    <HeroImage />
-                    <ScrollDown onClick={() => scrollToSection('experience')}>
-                        Scroll
-                    </ScrollDown>
-                </ContainerBox>
-            </RevealWrapper>
-        </Box>
+        <RevealWrapper delay={300}>
+            <ContainerBox component="section">
+                <HeroDescription />
+                <HeroImage />
+                <ScrollDown onClick={() => scrollToSection('experience')}>
+                    Scroll
+                </ScrollDown>
+            </ContainerBox>
+        </RevealWrapper>
     );
 }
 

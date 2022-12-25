@@ -1,4 +1,4 @@
-import { Box, keyframes, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { PropsWithChildren } from 'react';
 import { SectionType } from '../../utils';
 import { RevealWrapper } from './RevealWrapper';
@@ -8,18 +8,6 @@ type SectionProps = {
     titleTwo: string;
     id: SectionType;
 };
-
-export const customAnimation = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
 
 export function Section({
     titleOne,
