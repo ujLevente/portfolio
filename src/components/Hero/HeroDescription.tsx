@@ -19,7 +19,8 @@ export function HeroDescription() {
                     fontSize: { xs: '20px', md: '25px' },
                 }}
             >
-                Creative front-end developer
+                I develop Mobile <span style={{ color: '#f1f1f1' }}>&</span> Web
+                apps.
             </Typography>
             <Typography
                 sx={{
@@ -28,9 +29,11 @@ export function HeroDescription() {
                     lineHeight: { xs: '27px', md: '32px' },
                 }}
             >
-                Creative front-end developer with close to 4 years of experience
-                in enterprise companies and startups. Proficient in Html,
-                Tailwind Css, Javascript and React. Passionate about UI/UX
+                I&#39;m a{' '}
+                <b style={{ color: '#7e74f1' }}>Full Stack Developer</b> with
+                close to 4 years of experience, seasoned in building web, mobile
+                application and developing backend APIs, mainly with NodeJS and
+                React.
             </Typography>
             <Social socialLinks={socialLinksHero} />
         </ContainerBox>
