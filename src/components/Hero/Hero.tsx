@@ -1,12 +1,28 @@
+import { Keyframes } from '@emotion/react';
 import { Box, styled, Typography } from '@mui/material';
+import { useEffect, useState } from 'react';
+import { slideFadeInAnimation } from '../../animations';
 import { scrollToSection } from '../../utils';
 import { RevealWrapper } from '../common/RevealWrapper';
 import { HeroDescription } from './HeroDescription';
 import { HeroImage } from './HeroImage';
 
 export function Hero() {
+    const [anim, setAnim] = useState<Keyframes | undefined>();
+
+    useEffect(() => {
+        setAnim(slideFadeInAnimation);
+    }, []);
+
     return (
-        <RevealWrapper delay={300}>
+        <RevealWrapper
+            delay={300}
+            onVisibilityChange={(a: any, b: any) => {
+                console.log(a, b);
+            }}
+            keyframes={anim}
+            // fraction={0}
+        >
             <ContainerBox component="section">
                 <HeroDescription />
                 <HeroImage />
