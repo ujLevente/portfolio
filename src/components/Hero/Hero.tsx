@@ -17,11 +17,9 @@ export function Hero() {
     return (
         <RevealWrapper
             delay={300}
-            onVisibilityChange={(a: any, b: any) => {
-                console.log(a, b);
-            }}
-            keyframes={anim}
             fraction={0}
+            // setting animation to active again after useEffect, this way works navigating from fb redirect
+            keyframes={anim}
         >
             <ContainerBox component="section">
                 <HeroDescription />
