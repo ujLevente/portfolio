@@ -21,7 +21,7 @@ export function Hero() {
                 console.log(a, b);
             }}
             keyframes={anim}
-            // fraction={0}
+            fraction={0}
         >
             <ContainerBox component="section">
                 <HeroDescription />
