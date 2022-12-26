@@ -35,6 +35,7 @@ const experienceList: ExperienceType[] = [
             "Write modern, performant, maintainable code for the company's parcel delivery ecosystem",
             'Developing the courier mobile application',
             'Working on external projects',
+            'Implementing design from Figma',
         ],
         url: 'https://viddl.hu/',
         company: 'Cargo-Viszed Kft.',

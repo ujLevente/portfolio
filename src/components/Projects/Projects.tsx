@@ -17,46 +17,49 @@ import { Section } from '../common/Section';
 
 const projectList = [
     {
-        title: 'Integrating Algolia Search with WordPress Multisite',
-        description:
-            'Building a custom multisite compatible WordPress plugin to build global search with Algolia',
-        technologies: ['Java', 'Spring', 'JPA', 'Java EE', 'Postgres SQL'],
-        link: 'https://medium.com/stories-from-upstatement/integrating-algolia-search-with-wordpress-multisite-e2dea3ed449c',
-    },
-    {
         title: 'Hungarian Startup University Program',
-        description:
-            'Building a custom multisite compatible WordPress plugin to build global search with Algolia',
-        technologies: ['Java', 'Spring', 'JPA', 'Java EE', 'Postgres SQL'],
-        link: 'https://medium.com/stories-from-upstatement/integrating-algolia-search-with-wordpress-multisite-e2dea3ed449c',
+        description: `The program's aim is to introduce hungarian university students to the world of innovation
+             and to give modern entrepreneurial knowledge required to manage startups.
+             The program can be taken as subject in universities.`,
+        //  , the web application's aim is to manage students
+        //  who participate, give administrative features to universities, connecting students with mentors and to contain the curriculum.
+        technologies: ['React', 'Mongo', 'NestJS'],
+        link: 'https://hsup.nkfih.gov.hu/',
     },
     {
-        title: 'Integrating Algolia Search with WordPress Multisite',
-        description:
-            'Building a custom multisite compatible WordPress plugin to build global search with Algolia',
-        technologies: ['Java', 'Spring', 'JPA', 'Java EE', 'Postgres SQL'],
-        link: 'https://medium.com/stories-from-upstatement/integrating-algolia-search-with-wordpress-multisite-e2dea3ed449c',
+        title: 'Hungarian Startup University Program (mobile app)',
+        description: `This is the mobile application, unlike the web app this is only for student, 
+            it is mainly for learning the curriculum and managing the student project teams.`,
+        technologies: ['React Native', 'Mongo', 'NestJS', 'Expo'],
+        link: 'https://play.google.com/store/apps/details?id=hu.hsup.student&pli=1',
     },
     {
-        title: 'Integrating Algolia Search with WordPress Multisite',
-        description:
-            'Building a custom multisite compatible WordPress plugin to build global search with Algolia',
-        technologies: ['Java', 'Spring', 'JPA', 'Java EE', 'Postgres SQL'],
-        link: 'https://medium.com/stories-from-upstatement/integrating-algolia-search-with-wordpress-multisite-e2dea3ed449c',
+        title: 'ViddL courier app',
+        description: `This is a cross platform mobile application for managing package deliveries for couriers.`,
+        technologies: ['React Native', 'Mongo', 'NestJS', 'Expo'],
+        link: 'https://apps.apple.com/hu/app/viddl-fut%C3%A1r/id1389044430?l=hu',
     },
     {
-        title: 'Integrating Algolia Search with WordPress Multisite',
-        description:
-            'Building a custom multisite compatible WordPress plugin to build global search with Algolia',
-        technologies: ['Java', 'Spring', 'JPA', 'Java EE', 'Postgres SQL'],
-        link: 'https://medium.com/stories-from-upstatement/integrating-algolia-search-with-wordpress-multisite-e2dea3ed449c',
+        title: 'Space ex',
+        description: `This is a web application where you are able to send your ex to space. 
+            Upload a photo and the application will show your ex flying throught space, 
+            the fly path is connected to satelites.`,
+        technologies: ['React', 'NextJS', 'Tailwind', 'Mongo'],
+        link: '',
     },
     {
-        title: 'Integrating Algolia Search with WordPress Multisite',
-        description:
-            'Building a custom multisite compatible WordPress plugin to build global search with Algolia',
+        title: 'SME Innovation Platform',
+        description: `This is a platform to introduce SMEs to innovative enterprise management.
+        Contains a curriculum and by finishing it a certificate can be achieved`,
+        technologies: ['React', 'Mongo', 'NestJS'],
+        link: 'https://kkv.nkfih.gov.hu/',
+    },
+    {
+        title: 'Evita Family Support',
+        description: `This application's aim is to lecture future parents about the way of 
+            taking care babies and small children.`,
         technologies: ['Java', 'Spring', 'JPA', 'Java EE', 'Postgres SQL'],
-        link: 'https://medium.com/stories-from-upstatement/integrating-algolia-search-with-wordpress-multisite-e2dea3ed449c',
+        link: 'https://evita.hu/',
     },
 ];
 
@@ -79,7 +82,10 @@ export function Projects() {
                 {projectsToShow.map(
                     ({ title, link, description, technologies }, i) => (
                         <Grid item xs={12} sm={6} md={4} key={title}>
-                            <RevealWrapper delay={200 * i}>
+                            <RevealWrapper
+                                delay={200 * i}
+                                style={{ height: '100%' }}
+                            >
                                 <ProjectBox>
                                     <ProjectTopBox>
                                         <FolderIcon />
