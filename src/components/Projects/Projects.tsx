@@ -40,14 +40,6 @@ const projectList = [
         link: 'https://apps.apple.com/hu/app/viddl-fut%C3%A1r/id1389044430?l=hu',
     },
     {
-        title: 'Space ex',
-        description: `This is a web application where you are able to send your ex to space. 
-            Upload a photo and the application will show your ex flying throught space, 
-            the fly path is connected to satelites.`,
-        technologies: ['React', 'NextJS', 'Tailwind', 'Mongo'],
-        link: '',
-    },
-    {
         title: 'SME Innovation Platform',
         description: `This is a platform to introduce SMEs to innovative enterprise management.
         Contains a curriculum and by finishing it a certificate can be achieved`,
@@ -60,6 +52,14 @@ const projectList = [
             taking care babies and small children.`,
         technologies: ['Java', 'Spring', 'JPA', 'Java EE', 'Postgres SQL'],
         link: 'https://evita.hu/',
+    },
+    {
+        title: 'Space ex',
+        description: `(not finished) This is a web application where you are able to send your ex to space. 
+            Upload a photo and the application will show your ex flying throught space, 
+            the fly path is connected to satelites.`,
+        technologies: ['React', 'NextJS', 'Tailwind', 'Mongo'],
+        link: 'https://space-ex-git-parallax-effect-ddoman90.vercel.app/?fbclid=IwAR2yh5nB_etci8zHEQnvoLYYvf0DhnTLPcTGrMY0icc-7wOPgFxjXbe_uQg',
     },
 ];
 
