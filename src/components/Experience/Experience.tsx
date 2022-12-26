@@ -72,7 +72,7 @@ export function Experience() {
     return (
         <Section
             titleOne="career path"
-            titleTwo="Work Experices"
+            titleTwo="Work Experiences"
             id="experience"
         >
             <Box
