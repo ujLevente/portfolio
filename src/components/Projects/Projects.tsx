@@ -18,7 +18,7 @@ import { Section } from '../common/Section';
 const projectList = [
     {
         title: 'Hungarian Startup University Program',
-        description: `The program's aim is to introduce hungarian university students to the world of innovation
+        description: `The program's aim is to introduce Hungarian university students to the world of innovation
              and to give modern entrepreneurial knowledge required to manage startups.
              The program can be taken as subject in universities.`,
         //  , the web application's aim is to manage students
