@@ -30,6 +30,7 @@ export function ContactDescription() {
                 I&apos;m always happy to hear about exciting opportunities, and
                 build valuable connections. Let&apos;s connect! You can send an
                 e-mail or fill out the form.
+                {/* I am currently looking for new opportunities, if you have an exciting job or a project you want to  */}
             </Typography>
             <Typography
                 variant="body1"

@@ -74,7 +74,6 @@ const softSkills = [
     'Patience',
     'Flexibility',
     'Respectfulness',
-    'Earnestness',
     'Ability to recieve criticism well',
     'Determination',
     'Seeking development',
@@ -82,7 +81,7 @@ const softSkills = [
 
 export function Skills() {
     return (
-        <Section titleOne="title one" titleTwo="Skills" id="skillset">
+        <Section titleOne="Strengths" titleTwo="Skills" id="skillset">
             <Typography
                 variant="h4"
                 sx={{ fontSize: '20px', mb: 3, color: 'text.primary' }}
