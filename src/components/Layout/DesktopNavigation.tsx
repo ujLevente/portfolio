@@ -1,10 +1,10 @@
+import DownloadIcon from '@mui/icons-material/Download';
 import LinkIcon from '@mui/icons-material/Link';
 import { Link, styled, Tooltip } from '@mui/material';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import { NAV_ITEMS } from '../../constants';
 import { scrollToSection } from '../../utils';
-
 export function DesktopNavigation() {
     return (
         <ContainerBox>
@@ -14,7 +14,7 @@ export function DesktopNavigation() {
                     {name}
                 </NavItem>
             ))}
-            <CopyUrlTooltip title="Copy page url">
+            <TooltipButton title="Copy page url" sx={{ right: '40px' }}>
                 <IconButton
                     onClick={() =>
                         navigator.clipboard.writeText(window.location.origin)
@@ -23,7 +23,22 @@ export function DesktopNavigation() {
                 >
                     <LinkIcon sx={{ color: 'text.primary' }} />
                 </IconButton>
-            </CopyUrlTooltip>
+            </TooltipButton>
+            <TooltipButton title="Download resume">
+                <IconButton
+                    onClick={() => {
+                        {
+                            const link = document.createElement('a');
+                            link.download = `resume.pdf`;
+                            link.href = './resume.pdf';
+                            link.click();
+                        }
+                    }}
+                    color="primary"
+                >
+                    <DownloadIcon sx={{ color: 'text.primary' }} />
+                </IconButton>
+            </TooltipButton>
         </ContainerBox>
     );
 }
@@ -50,7 +65,7 @@ const NavItem = styled(Link)(({ theme }) => ({
     },
 }));
 
-const CopyUrlTooltip = styled(Tooltip)(({ theme }) => ({
+const TooltipButton = styled(Tooltip)(({ theme }) => ({
     position: 'absolute',
     right: 0,
     top: '50%',
