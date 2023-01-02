@@ -27,7 +27,7 @@ export const socialLinksHero = [
         Icon: LinkedIn,
     },
     {
-        href: 'https://www.linkedin.com/in/%C3%BAj-levente/',
+        href: 'https://github.com/ujLevente',
         Icon: GitHub,
     },
     {
@@ -37,18 +37,7 @@ export const socialLinksHero = [
 ];
 
 export const socialLinksContact = [
-    {
-        href: 'https://www.linkedin.com/in/%C3%BAj-levente/',
-        Icon: LinkedIn,
-    },
-    {
-        href: 'https://www.linkedin.com/in/%C3%BAj-levente/',
-        Icon: GitHub,
-    },
-    {
-        href: 'https://www.upwork.com/freelancers/~01216b40a0ad9d5874',
-        Icon: UpworkIcon,
-    },
+    ...socialLinksHero,
     {
         href: 'mailto:levente.uj.development@gmail.com',
         Icon: Mail,
